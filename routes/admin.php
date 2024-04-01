@@ -63,11 +63,23 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('setting', [WebController::class, 'Setting'])->name('setting.home');
     Route::post('setting/update', [WebController::class, 'StoreSetting'])->name('setting.update');
 
+    // sector
+    Route::get('sector', [WebController::class, 'Sector'])->name('sector.home');
+    Route::get('sector/create', [WebController::class, 'CreateSector'])->name('sector.create');
+    Route::post('sector/store', [WebController::class, 'StoreSector'])->name('sector.store');
+    Route::get('sector/{id}/edit', [WebController::class, 'EditSector'])->name('sector.edit');
+    Route::put('sector/{id}/update', [WebController::class, 'UpdateSector'])->name('sector.update');
+    Route::delete('sector/{id}/delete', [WebController::class, 'DeleteSector'])->name('sector.delete');
+
+
+    // profile update
     Route::get('/profile', [HomeController::class, 'profile'])->name('profile-page');
     Route::put('/profile_update/{id}', [HomeController::class, 'update'])->name('profile-update');
-    
     Route::put('change-passwprd', [HomeController::class, 'validatepassword'])->name('change-password-update');
     
+    // welcome
+    Route::get('welcome', [WebController::class, 'Welcome'])->name('welcome.home');
+    Route::post('welcome/store', [WebController::class, 'StoreWelcome'])->name('welcome.store');
 
     Route::get('optimize',function (){
         \Illuminate\Support\Facades\Artisan::call('optimize');

@@ -30,18 +30,21 @@
                 </div>
                 <!-- form -->
                 <div class="col-md-6">
-                    <h4 class="mb-4">Have a Project? - <span>Lets Talk</span></h4>
+                    <h4 class="mb-4">Have a question or want to learn more about our ventures? - 
+                        <span>Contact us today and let's explore
+                            how we can collaborate to drive innovation and create value together.</span>
+                    </h4>
                     <form method="post" class="" action="{{ route('contact.store') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <input name="name" type="text" placeholder="Your Name *" required>
+                                <input name="name" type="text" placeholder="Enter Your Name *" required>
                             </div>
                             <div class="col-md-12 form-group">
-                                <input name="email" type="email" placeholder="Your Email *" required>
+                                <input name="email" type="email" placeholder="Enter Your Email *" required>
                             </div>
                             <div class="col-md-12 form-group">
-                                <input name="phone" type="text" placeholder="Your Number *" required>
+                                <input name="phone" type="text" placeholder="Enter Your Number *" required>
                             </div>
                             <div class="col-md-12 form-group">
                                 <input name="subject" type="text" placeholder="Subject *" required>

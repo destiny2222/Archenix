@@ -41,14 +41,38 @@
                                  <!-- Row -->
                                  <div class="row">
                                      <div class="col-md-12 mb-4">
-                                         <label class=" form-label mb-4">Description :</label>
-                                         <textarea  name="body"  class=" form-control">{{ optional(getUi())->body ?? '' }}</textarea>
+                                         <label class=" form-label mb-4"> Description :</label>
+                                         <textarea  name="body" cols="10" rows="10" class=" form-control">{{ optional(getUi())->body ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!--End Row-->
+                                 <!-- Row -->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Mission :</label>
+                                         <textarea  name="mission" cols="10" rows="10" class=" form-control">{{ optional(getUi())->mission ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!--End Row-->
+                                 <!-- Row -->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Vision :</label>
+                                         <textarea  name="vision" cols="10" rows="10"  class=" form-control">{{ optional(getUi())->vision ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!--End Row-->
+                                 <!-- Row -->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Why Choose Us :</label>
+                                         <textarea  name="choose_us" cols="10" rows="10"  class=" form-control">{{ optional(getUi())->choose_us ?? '' }}</textarea>
                                      </div>
                                  </div>
                                  <!--End Row-->
              
                                  <!--Row-->
-                                 <div class="row">
+                                 {{-- <div class="row">
                                      <div class="col-md-12">
                                          <label class=" form-label mb-4">Image Upload :</label>
                                          <input  type="file" value="{{ optional(getUi())->image ?? '' }}" name="image" class="@error('image') is-invalid @enderror form-control">
@@ -63,7 +87,7 @@
                                              <strong>{{ $message }}</strong>
                                          </span>
                                      @enderror
-                                 </div>
+                                 </div> --}}
                                  <!--End Row-->
                              </div>
                              <div class="card-footer">

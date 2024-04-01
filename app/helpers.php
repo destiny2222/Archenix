@@ -6,6 +6,7 @@ use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Social;
+use App\Models\Welcome;
 use Intervention\Image\Facades\Image;
 
 
@@ -39,6 +40,10 @@ function getService()
 function getBrands()
 {
     return Brand::first();
+}
+function getWelcome()
+{
+    return Welcome::first();
 }
 
 // function getReview()

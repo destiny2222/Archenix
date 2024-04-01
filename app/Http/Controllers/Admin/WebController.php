@@ -4,14 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SettingRequest;
+use App\Http\Requests\WelcomeRequest;
 use App\Models\About;
 use App\Models\Brand;
 use App\Models\Portfolio;
 use App\Models\Review;
+use App\Models\Sector;
 use App\Models\Service;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Social;
+use App\Models\Welcome;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -128,7 +131,10 @@ class WebController extends Controller
 
         $request->validate([
             'title' => ['nullable', 'string', 'max:100'],
-            'body' => ['required', 'string'],
+            'body' => ['nullable', 'string'],
+            'mission'=>['nullable', 'string'],
+            'vision'=>['nullable', 'string'],
+            'choose_us'=>['nullable', 'string'],
             'image'=>['nullable','image', 'mimes:png,jpg,jpeg,gif,png,avif'],
         ]);
 
@@ -144,6 +150,9 @@ class WebController extends Controller
             $data = new About();
             $data->title = $request->title;
             $data->body = $request->body;
+            $data->choose_us = $request->choose_us;
+            $data->mission = $request->mission;
+            $data->vision = $request->vision;
             $data->image = $filename;
             $data->save();
             return back()->with('success', ' Created Successfully!');
@@ -166,8 +175,10 @@ class WebController extends Controller
             $data->update([
                 'title' => $request->title,
                 'body'=>$request->body,
+                'mission'=>$request->mission,
+                'vision'=>$request->vision,
+                'choose_us'=>$request->choose_us,
             ]);
-            $data->save();
             return back()->with('success', ' Updated Successfully!');
         }
         
@@ -543,6 +554,101 @@ class WebController extends Controller
             Setting::create($request->validated());
         }
         return redirect('admin/setting')->with('success', 'Setting Updated Successfully!');
+    }
+
+
+    // sector
+    public function Sector(){
+        $data['title'] = 'Sector';
+        $data['sector'] = Sector::orderBy('id', 'asc')->get();
+        return view('admin.sector.index', $data);
+    }
+
+
+    public function CreateSector(){
+        $data['title'] = 'Sector';
+        return view('admin.sector.create', $data);
+    }
+
+    public function StoreSector(Request $request){
+        $request->validate([ 
+            'title'=>['nullable', 'string'],
+            'description'=>['nullable', 'string'],
+            'image'=>['nullable', 'image', 'mimes:png,jpg,jpeg,gif'],
+        ]);
+
+        $sector_image = null;
+        if($request->hasFile('image')) {
+            $sector_file = time().'.'.$request->image->extension();
+            $request->image->move(public_path('upload/sector/'),$sector_file);
+            $sector_image = $sector_file;
+        }
+
+        $sector = new Sector();
+        $sector->title = $request->title;
+        $sector->description = $request->description;
+        $sector->image = $sector_image;
+        if( $sector->save()){
+            return redirect('admin/sector')->with('success', 'Sector Created Successfully!');
+        }else{
+            return back()->with('error', 'Problem With Creating Sector');
+        }
+    }
+
+    public function EditSector($id){
+        $data['title'] = 'Sector';
+        $data['sector'] = Sector::find($id);
+        return view('admin.sector.edit', $data);
+    }
+
+    public function UpdateSector(Request $request, $id){
+        $sector = Sector::find($id);
+
+        if ($request->hasFile('image')) {
+            // Delete old image if it exists
+            if (File::exists(public_path('upload/sector/' . $sector->image))) {
+                    File::delete(public_path('upload/sector/' . $sector->image));
+                }
+                // Upload new image
+                $image = $request->file('image');
+                $extension = $image->getClientOriginalExtension();
+                $sectorfile = time() . '.' . $extension;
+                $image->move(public_path('upload/sector'), $sectorfile);
+                $sector->image = $sectorfile;
+            }
+            $sector->update([ 
+                'title' => $request->input('title'),
+                'description'=>$request->input('description'),
+            ]);
+
+            return redirect('admin/sector')->with('success', 'Sector Updated Successfully!');
+    }
+
+    public function DeleteSector($id){
+        $sector = Sector::find($id);
+        if($sector->delete()){
+            return redirect('admin/sector')->with('success', 'Sector Deleted Successfully!');
+        }else{
+            return back()->with('error', 'Problem With Deleting Sector');
+        }
+    }
+
+
+    // welcome
+    public function Welcome(){
+        $data['title'] = 'Welcome';
+        $data['welcome'] = Welcome::first();
+        return view('admin.welcome.index', $data);
+    }
+
+
+    public function StoreWelcome(WelcomeRequest $request){
+        if(Welcome::count()){
+            Welcome::first()->update($request->validated());
+        }else{
+            Welcome::create($request->validated());
+        }
+        return redirect('admin/welcome')->with('success', 'Updated Successfully!');
     }
 }
 

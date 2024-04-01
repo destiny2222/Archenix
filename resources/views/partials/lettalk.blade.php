@@ -6,8 +6,10 @@
                     <div class="sub-title border-bot-dark">Contact Us</div>
                 </div>
                 <div class="col-md-7">
-                    <div class="section-title">Let's discuss your project</div>
-                    <p>Fill out the form and our manager will contact you for consultation.</p>
+                    <div class="section-title">Have a question or want to learn more about our ventures?
+                        </div>
+                    <p>Contact us today and let's explore
+                        how we can collaborate to drive innovation and create value together.</p>
                     <form method="post" class="" action="{{ route('contact.store') }}">
                         @csrf
                         <div class="row">

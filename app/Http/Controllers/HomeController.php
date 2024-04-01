@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\SendMail;
 use App\Models\Contact;
 use App\Models\Portfolio;
+use App\Models\Sector;
 use App\Models\Service;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ class HomeController extends Controller
 
 
     public function about(){
-        return view('frontend.about');
+        $sector = Sector::orderBy('id', 'asc')->get();
+        return view('frontend.about', compact('sector'));
     }
 
     public function service(){

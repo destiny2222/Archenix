@@ -54,6 +54,7 @@
                                                     <li><a class="sub-slide-item" href="{{ route('admin.slide.create') }}">Create Slider</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="{{ route('admin.welcome.home') }}" class="slide-item">About Brand</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -74,6 +75,7 @@
                                     <div class="tab-pane active" id="side13">
                                         <ul class="sidemenu-list">
                                             <li><a href="{{ route('admin.about.home') }}" class="slide-item">About Us</a></li>
+                                            <li><a href="{{ route('admin.sector.home') }}" class="slide-item">Sector</a></li>
                                         </ul>
                                     </div>
                                 </div>

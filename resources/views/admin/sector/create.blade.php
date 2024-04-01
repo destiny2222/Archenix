@@ -18,9 +18,8 @@
     <!-- Row -->
     <div class="row">
         <div class="col-lg-12">
-            <form action="{{  route('admin.review.update', $review->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{  route('admin.sector.store') }}" method="post" enctype="multipart/form-data">
                @csrf
-               @method('PUT')
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Add New {{ $title }}</div>
@@ -28,21 +27,10 @@
                     <div class="card-body">
                         <div class="row mb-4">
                             <div class="col-md-12">
-                                <label class=" form-label">Name:</label>
-                                <input type="text" value="{{  $review->name }}" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="name">
+                                <label class=" form-label">Sector Title:</label>
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="">
                             </div>
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-md-12">
-                                <label class=" form-label">Occupation:</label>
-                                <input type="text" value="{{  $review->occupation }}" class="form-control @error('occupation') is-invalid @enderror" name="occupation" placeholder="Occupation">
-                            </div>
-                            @error('occupation')
+                            @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -52,34 +40,23 @@
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label class=" form-label mb-4">Description :</label>
-                                <textarea  name="review"  class=" form-control">{{  $review->review }}</textarea>
+                                <textarea  name="description" rows="5" cols="50" class=" form-control"></textarea>
                             </div>
                         </div>
                         <!--End Row-->
     
                         <!--Row-->
-                        <div class="row mb-4">
+                        {{-- <div class="row">
                             <div class="col-md-12">
                                 <label class=" form-label mb-4">Upload :</label>
-                                <input  type="file" name="image" value="{{ $review->image }}" class="@error('image') is-invalid @enderror form-control">
+                                <input  type="file" name="image" class="@error('image') is-invalid @enderror form-control">
                             </div>
                             @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
-                        <!--End Row-->
-                        <div class="row">
-                            <div class="form-group">
-                                <label class=" form-label mb-4">Published/Hold</label>
-                                <select class="form-control"   name="status" >
-                                    <option value="" >Select</option>
-                                    <option value="1" {{  $review->status == 1 ? 'selected' : ''  }}>Published</option>
-                                    <option value="0" {{  $review->status == 0 ? 'selected' : ''  }}>Hold</option>
-                                </select>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="card-footer">
                         <!--Row-->

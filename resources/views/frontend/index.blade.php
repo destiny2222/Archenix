@@ -32,9 +32,9 @@
                         <div class="sub-title border-bot-light">Who are we?</div>
                     </div>
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
-                        <div class="section-title"><span>About</span> us</div>
+                        <div class="section-title"><span>Welcome to </span> {{ getWelcome() ? getWelcome()->title : '' }}</div>
                         <p>
-                            {{ getUi() ? getUi()->body : '' }}
+                            {{ getWelcome() ? getWelcome()->description : '' }}
                         </p>
                     </div>
                 </div>

@@ -60,9 +60,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-30">
-                        <div class="sub-title border-footer-light">Contact Us</div>
+                        <div class="sub-title border-footer-light">{{ config('app.name') }}</div>
                         <p>
-                            {{ getAbout() ? getAbout()->body : '' }}
+                            {{ getWelcome() ? getWelcome()->description : '' }}
                         </p>
                     </div>
                     <div class="col-md-4">
@@ -102,9 +102,9 @@
                     <div class="col-md-4">
                         <p>© <script>document.write(new Date().getFullYear())</script> {{ config('app.name') }}. All right reserved.</p>
                     </div>
-                    {{-- <div class="col-md-8">
-                        <p class="right"><a href="#">Terms &amp; Conditions</a></p>
-                    </div> --}}
+                    <div class="col-md-8">
+                        <p class="right"><a href="#">Terms &amp; Conditions</a> | Terms of Use | Sitemap</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -30,30 +30,35 @@
                                 <label class=" form-label">Slide Title :</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Slide Title">
                             </div>
-                            @error('title')
-                                {{-- <div class="invalid-feedback" role="alert"> --}}
-                                    <strong class="invalid-feedback">{{ $message }}</strong>
-                                {{-- </div> --}}
-                            @enderror
                         </div>
+                        @error('title')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @enderror
                         <div class="row mb-4">
                             <div class="col-md-12">
                                 <label class=" form-label">Slide Link :</label>
                                 <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" placeholder="Slide Link">
                             </div>
-                            @error('link')
-                                {{-- <div class="invalid-feedback" role="alert"> --}}
-                                    <strong>{{ $message }}</strong>
-                                {{-- </div> --}}
-                            @enderror
                         </div>
+                        @error('link')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @enderror
                         <!-- Row -->
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label class=" form-label mb-4">Slide Description :</label>
-                                <textarea  name="description" class=" form-control"></textarea>
+                                <textarea  name="description" class=" form-control @error('description') is-invalid @enderror"></textarea>
                             </div>
                         </div>
+                        @error('description')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @enderror
                         <!--End Row-->
     
                         <!--Row-->
@@ -62,12 +67,12 @@
                                 <label class=" form-label mb-4">Slide Upload :</label>
                                 <input  type="file" name="image" class="@error('image') is-invalid @enderror form-control">
                             </div>
-                            @error('image')
-                                {{-- <div class="invalid-feedback" role="alert"> --}}
-                                    <strong>{{ $message }}</strong>
-                                {{-- </div> --}}
-                            @enderror
                         </div>
+                        @error('image')
+                            <div class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @enderror
                         <!--End Row-->
                     </div>
                     <div class="card-footer">

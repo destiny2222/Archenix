@@ -46,14 +46,18 @@ class WebController extends Controller
             // $path = public_path('upload/slider');
             // File::delete($path . $request->image);
         }
-        Slider::create([
-            'title'=>$request->title,
-            'description'=>$request->description,
-            'link'=>$request->link,
-            'image'=> $filename,
-        ]);
+        $slide = new Slider;
+        $slide->title = $request->title;
+        $slide->description = $request->description;
+        $slide->link = $request->link;
+        $slide->image = $filename;
+        
+        if($slide->save()){
+            return redirect('admin/slides')->with('success', 'Slide added successfully');
+        }else{
+            return back()->with('error', 'Oops something went wrong!');
+        }
 
-        return redirect('admin/slides')->with('success', 'Slide added successfully');
 
     }
 

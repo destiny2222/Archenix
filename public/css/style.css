@@ -759,8 +759,12 @@ input[type="checkbox"] {
     color: #fff;
 }
 .nav-scroll .logo-img {
-    width: 165px;
+    width: 70px;
 }
+.logo-img {
+    width: 70px !important;
+}
+
 .nav-scroll .logo-img {
     margin-bottom: 0px;
 }

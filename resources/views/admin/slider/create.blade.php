@@ -36,12 +36,12 @@
                                 <strong>{{ $message }}</strong>
                             </div>
                         @enderror
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-md-12">
                                 <label class=" form-label">Slide Link :</label>
                                 <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" placeholder="Slide Link">
                             </div>
-                        </div>
+                        </div> --}}
                         @error('link')
                             <div class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

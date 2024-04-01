@@ -35,7 +35,7 @@ class WebController extends Controller
             'title'=>['nullable', 'string',],
             'description'=>['nullable', 'string',],
             'image'=>['nullable','image', 'mimes:png,jpg,jpeg,gif,png,avif'],
-            'link'=>['nullable', 'string'],
+            // 'link'=>['nullable', 'string'],
         ]);
         
         if ($request->hasFile('image')) {
@@ -49,7 +49,7 @@ class WebController extends Controller
         $slide = new Slider;
         $slide->title = $request->title;
         $slide->description = $request->description;
-        $slide->link = $request->link;
+        // $slide->link = $request->link;
         $slide->image = $filename;
         
         if($slide->save()){

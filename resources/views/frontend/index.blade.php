@@ -13,7 +13,7 @@
                                     <div class="col-md-7">
                                         <h1>{{ $slides->title }}</h1>
                                         <p>{{ $slides->description }}</p> 
-                                        <a href="{{ $slides->link }}" class="button-light">Learn more</a> 
+                                        {{-- <a href="{{ $slides->link }}" class="button-light">Learn more</a>  --}}
                                     </div>
                                 </div>
                             </div>

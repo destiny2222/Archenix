@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Archenix evokes a sense of authority, innovation, and connectivity.">
+    <meta name="keywords" content="company, Datarails,Leadership,Growth,innovation,Collaboration,Performance,Customer satisfaction,Natural materials,Solar power,business,Eco-friendly    ">
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;1,300;1,400&amp;family=Oswald:wght@300;400&amp;display=swap">
@@ -15,7 +17,10 @@
     <link rel=stylesheet href="modules/magnific-popup/magnific-popup.css">
     <link rel=stylesheet href="modules/YouTubePopUp/YouTubePopUp.css">
     <link rel=stylesheet href="css/style.css">
-    {{ getSetting()->analysis_trackingid ?? '' }}
+   <script src=" {{ getSetting()->google_analytics ?? '' }}"></script>
+   <script>
+       {{ getSetting()->analysis_trackingid ?? '' }}
+   </script>
 </head>
 <body>
     <div class="content-wrapper">

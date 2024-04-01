@@ -44,18 +44,23 @@
     });
     
     // Navbar scrolling background
-    wind.on("scroll",function () {
-        var bodyScroll = wind.scrollTop(),
+    $(window).on("scroll", function () {
+        var bodyScroll = $(window).scrollTop(),
             navbar = $(".navbar"),
-            logo = $(".navbar .logo> img");
-        if(bodyScroll > 100){
+            normalLogo = $(".navbar .logo .normal-logo"),
+            scrolledLogo = $(".navbar .logo .scrolled-logo");
+    
+        if (bodyScroll > 100) {
             navbar.addClass("nav-scroll");
-            logo.attr('src', 'images/logo.png');
-        }else{
+            normalLogo.hide();
+            scrolledLogo.show();
+        } else {
             navbar.removeClass("nav-scroll");
-            logo.attr('src', 'images/logo.png');
+            normalLogo.show();
+            scrolledLogo.hide();
         }
     });
+    
 
     // Close navbar-collapse when a  clicked
     $(".navbar-nav .dropdown-item a").on('click', function () {

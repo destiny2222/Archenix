@@ -2,7 +2,11 @@
     <div class="container">
         <!-- Logo -->
         <div class="logo-wrapper">
-            <a class="logo" href="/"> <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img" alt=""> </a>
+            <a class="logo" href="/">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img normal-logo" alt="Logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img scrolled-logo" alt="Logo"> 
+                
+            </a>
             <!-- <a class="logo" href="/"> <h2>ArchSan <span>Architecture</span></h2> </a> -->
         </div>
         <!-- Button -->

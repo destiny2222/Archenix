@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SettingRequest;
 use App\Models\About;
 use App\Models\Brand;
 use App\Models\Portfolio;
@@ -529,20 +530,13 @@ class WebController extends Controller
         return view('admin.setting.index', $data);
     }
 
-    public function StoreSetting(Request $request){
-        $request->validate([
-            // 'site_title'=>['required', 'string'],
-            'analysis_trackingid'=>['required', 'string'],
-        ]);
-
-        $setting = Setting::first();
-        // $setting->site_title = $request->input('site_title');
-        $setting->analysis_trackingid = $request->input('analysis_trackingid');
-        if($setting->save()){
-            return redirect('admin/setting')->with('success', 'Setting Updated Successfully!');
+    public function StoreSetting(SettingRequest $request){
+        if(Setting::count()){
+           Setting::first()->update($request->validated());
         }else{
-            return back()->with('error', 'Problem With Updating Setting');
+            Setting::create($request->validated());
         }
+        return redirect('admin/setting')->with('success', 'Setting Updated Successfully!');
     }
 }
 

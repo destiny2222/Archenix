@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->longText('analysis_trackingid')->nullable();
+            $table->longText('google_analytics')->nullable();
             $table->timestamps();
         });
     }

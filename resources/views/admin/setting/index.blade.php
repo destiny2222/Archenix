@@ -31,7 +31,13 @@
                                  <div class="row">
                                      <div class="col-md-12 mb-4">
                                          <label class=" form-label mb-4">Analysis Tracking ID :</label>
-                                         <textarea  name="analysis_trackingid"  class=" form-control">{{ $setting->analysis_trackingid ?? '' }}</textarea>
+                                         <textarea  name="google_analytics" class=" form-control">{{ $setting->google_analytics ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Analysis Tracking ID :</label>
+                                         <textarea  name="analysis_trackingid" cols="30" rows="10" class=" form-control">{{ $setting->analysis_trackingid ?? '' }}</textarea>
                                      </div>
                                  </div>
                                  <!--End Row-->

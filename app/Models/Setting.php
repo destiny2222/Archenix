@@ -10,6 +10,7 @@ class Setting extends Model
     use HasFactory;
 
     protected $fillable = [ 
-        'analysis_trackingid'
+        'analysis_trackingid',
+        'google_analytics'
     ];
 }

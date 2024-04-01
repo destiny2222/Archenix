@@ -1,12 +1,10 @@
 <x-mail::message>
-# Introduction
 
-The body of your message.
+<h2>Full Name <br>{{  $sendmail->name }}</h2> <br>
+<h2>Email <br>{{  $sendmail->email }}</h2> <br>
+<h2>Phone Number <br>{{  $sendmail->phone }}</h2> <br>
+<h2>Subject <br>{{  $sendmail->email }}</h2> <br>
+<p>Message <br>{{  $sendmail->message }}</p>
 
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
 
-Thanks,<br>
-{{ config('app.name') }}
 </x-mail::message>

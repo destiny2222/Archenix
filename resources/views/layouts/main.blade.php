@@ -46,6 +46,7 @@
                 <div class="content-lines"></div>
             </div>
         </div>
+        
         <!-- Navbar -->
         @include('layouts.header')
 

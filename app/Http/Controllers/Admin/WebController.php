@@ -32,7 +32,7 @@ class WebController extends Controller
 
     public function SliderStore(Request $request){
         $request->validate([
-            'title'=>['nullable', 'string', 'min:70'],
+            'title'=>['nullable', 'string', 'min:100'],
             'description'=>['nullable', 'string', 'min:100'],
             'image'=>['nullable','image', 'mimes:png,jpg,jpeg,gif,png,avif'],
             'link'=>['nullable', 'string'],

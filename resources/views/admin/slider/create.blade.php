@@ -31,9 +31,9 @@
                                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Slide Title">
                             </div>
                             @error('title')
-                                <span class="invalid-feedback" role="alert">
+                                <div class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
                         </div>
                         <div class="row mb-4">
@@ -42,9 +42,9 @@
                                 <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" placeholder="Slide Link">
                             </div>
                             @error('link')
-                                <span class="invalid-feedback" role="alert">
+                                <div class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
                         </div>
                         <!-- Row -->
@@ -63,9 +63,9 @@
                                 <input  type="file" name="image" class="@error('image') is-invalid @enderror form-control">
                             </div>
                             @error('image')
-                                <span class="invalid-feedback" role="alert">
+                                <div class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
                         </div>
                         <!--End Row-->

@@ -530,6 +530,8 @@ class WebController extends Controller
         return view('admin.setting.index', $data);
     }
 
+
+    
     public function StoreSetting(SettingRequest $request){
         if(Setting::count()){
            Setting::first()->update($request->validated());

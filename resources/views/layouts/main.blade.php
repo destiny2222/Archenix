@@ -21,6 +21,7 @@
    <script>
        {{ getSetting()->analysis_trackingid ?? '' }}
    </script>
+   
 </head>
 <body>
     <div class="content-wrapper">

@@ -37,7 +37,7 @@
                                 </span>
                             @enderror
                         </div>
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-md-12">
                                 <label class=" form-label">Slide Link :</label>
                                 <input type="text" class="form-control @error('link') is-invalid @enderror" value="{{ $slide->link }}" name="link" placeholder="Slide Link">
@@ -47,7 +47,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <!-- Row -->
                         <div class="row">
                             <div class="col-md-12 mb-4">

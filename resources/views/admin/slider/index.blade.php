@@ -30,7 +30,7 @@
                                     <th>S/N</th>
                                     <th>Image</th>
                                     <th>Title</th>
-                                    <th>link</th>
+                                    {{-- <th>link</th> --}}
                                     <th>Description</th>
                                     <th>Action</th>
                                 </tr>
@@ -43,7 +43,7 @@
                                         <img src="{{ asset('upload/slider/'.$slides->image) }}" width="50" height="50" alt="">
                                     </td>
                                     <td>{{  $slides->title }}</td>
-                                    <td>{{  $slides->link }}</td>
+                                    {{-- <td>{{  $slides->link }}</td> --}}
                                     <td>{{  $slides->description }}</td>
                                     <td name="bstable-actions">
                                         <div class="btn-list d-flex">

@@ -63,6 +63,12 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('setting', [WebController::class, 'Setting'])->name('setting.home');
     Route::post('setting/update', [WebController::class, 'StoreSetting'])->name('setting.update');
 
+    Route::get('/profile', [HomeController::class, 'profile'])->name('profile-page');
+    Route::put('/profile_update/{id}', [HomeController::class, 'update'])->name('profile-update');
+    
+    Route::put('change-passwprd', [HomeController::class, 'validatepassword'])->name('change-password-update');
+    
+
     Route::get('optimize',function (){
         \Illuminate\Support\Facades\Artisan::call('optimize');
         return 1;

@@ -33,7 +33,7 @@ class HomeController extends Controller
     {
         $admin = Auth::guard('admin')->user();
         $adminUser = Admin::orderBy('id', 'desc')->get();
-        return view('admin.profile', compact('admin', 'adminUser'));
+        return view('admin.profile.index', compact('admin', 'adminUser'));
     }
 
     public function update(Request $request, $id)

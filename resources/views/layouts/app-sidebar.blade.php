@@ -3,11 +3,11 @@
     <div class="app-sidebar">
         <div class="side-header">
             <a class="header-brand1" href="{{ route('admin.home') }}">
-                <img src="/assets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
-                <img src="/assets/images/brand/icon-white.png" class="header-brand-img toggle-logo"
-                    alt="logo">
-                <img src="/assets/images/brand/icon-dark.png" class="header-brand-img light-logo" alt="logo">
-                <img src="/assets/images/brand/logo-dark.png" class="header-brand-img light-logo1"
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" width="100" height="100" alt="logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img toggle-logo"
+                    alt="logo" width="100" height="100">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo" width="100" height="100" alt="logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1" width="100" height="100"
                     alt="logo">
             </a>
             <!-- LOGO -->
@@ -29,27 +29,7 @@
                 <li class="sub-category">
                     <h3>Pre-build Pages</h3>
                 </li>
-                <li class="slide">
-                    <a class="side-menu__item" href="{{ route('admin.social.home') }}">
-                        <i class="side-menu__icon fe fe-layers"></i>
-                        <span class="side-menu__label">Contact info</span>
-                    </a>
-
-                    <ul class="slide-menu">
-                        <li class="panel sidetab-menu">
-                            <div class="panel-body tabs-menu-body p-0 border-0">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="side9">
-                                        <ul class="sidemenu-list">
-                                            <li class="side-menu-label1"><a href="javascript:void(0)">Pages</a></li>
-                                            <li><a href="profile.html" class="slide-item"> Profile</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+               
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                         class="side-menu__icon fe fe-folder"></i><span
@@ -127,6 +107,12 @@
                     <a class="side-menu__item" href="{{ route('admin.setting.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>
                         <span class="side-menu__label">Setting</span>
+                    </a>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ route('admin.social.home') }}">
+                        <i class="side-menu__icon fe fe-layers"></i>
+                        <span class="side-menu__label">Contact info</span>
                     </a>
                 </li>
             </ul>

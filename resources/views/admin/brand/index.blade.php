@@ -40,9 +40,12 @@
                                  </div>
                                  <!--Row-->
                                  <div class="row">
-                                     <div class="col-md-12">
+                                     <div class="col-md-12 mb-4">
                                          <label class=" form-label mb-4">Brand Logo:</label>
                                          <input  type="file" value="{{ getBrands()->image  }}" name="image" class="@error('image') is-invalid @enderror form-control">
+                                     </div>
+                                     <div class="pt-5" style="background: #000;min-height:70%; width:50%;">
+                                        <img src="{{ asset('upload/brand/'.getBrands()->image) }}"   alt="">
                                      </div>
                                      @error('image')
                                          <span class="invalid-feedback" role="alert">

@@ -3,9 +3,9 @@
         <div class="d-flex">
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
-            <a class="logo-horizontal " href="index.html">
-                <img src="/assets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
-                <img src="/assets/images/brand/logo-dark.png" class="header-brand-img light-logo1"
+            <a class="logo-horizontal " href="route('admin.home')">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" alt="logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1"
                     alt="logo">
             </a>
             <!-- LOGO -->
@@ -34,30 +34,28 @@
                             <!-- SIDE-MENU -->
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                    <img src="/assets/images/users/21.jpg" alt="profile-user"
+                                    <img src="{{ asset('upload/brand/'.getBrands()->image) }}" alt="profile-user"
                                         class="avatar  profile-user brround cover-image">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
                                         <div class="text-center">
-                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
-                                            <small class="text-muted">Senior Admin</small>
+                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">{{ getBrands()->name }}</h5>
+                                            <small class="text-muted">Administrator</small>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item" href="profile.html">
+                                    <a class="dropdown-item" href="{{ route('admin.profile-page') }}">
                                         <i class="dropdown-icon fe fe-user"></i> Profile
                                     </a>
-                                    <a class="dropdown-item" href="email-inbox.html">
-                                        <i class="dropdown-icon fe fe-mail"></i> Inbox
-                                        <span class="badge bg-danger rounded-pill float-end">5</span>
+                                    <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                                    onclick="event.preventDefault();
+                                                  document.getElementById('logout-form').submit();">
+                                        <i class="dropdown-icon fe fe-alert-circle"></i> {{ __('Sign out') }}
                                     </a>
-                                    <a class="dropdown-item" href="lockscreen.html">
-                                        <i class="dropdown-icon fe fe-lock"></i> Lockscreen
-                                    </a>
-                                    <a class="dropdown-item" href="login.html">
-                                        <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
-                                    </a>
+                                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </div>
                             </div>
                         </div>

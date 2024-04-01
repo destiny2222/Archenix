@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <!-- Header Banner -->
-    <div class="banner-header valign bg-img bg-fixed" data-overlay-dark="4" data-background="images/slider/1.jpg">
+    <div class="banner-header valign bg-img bg-fixed" data-overlay-dark="4" data-background="images/slider/2.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 caption mt-60">

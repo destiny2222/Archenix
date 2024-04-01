@@ -3,8 +3,10 @@
         <!-- Logo -->
         <div class="logo-wrapper">
             <a class="logo" href="/">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img normal-logo" alt="Logo">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img scrolled-logo" alt="Logo"> 
+                @if (getBrands())
+                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img normal-logo" alt="Logo">
+                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img scrolled-logo" alt="Logo"> 
+                @endif
                 
             </a>
             <!-- <a class="logo" href="/"> <h2>ArchSan <span>Architecture</span></h2> </a> -->

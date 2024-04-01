@@ -404,7 +404,7 @@ class WebController extends Controller
         $service = new Service;
         $service->title = $request->title;
         $service->description = $request->description;
-        $service->image = $image_file;
+        $service->image = $image_file ?? $request->image;
         if ($service->save()) {
             return redirect('admin/service')->with('success', 'Saved Successfully!');
         } else {
@@ -531,7 +531,7 @@ class WebController extends Controller
     }
 
 
-    
+
     public function StoreSetting(SettingRequest $request){
         if(Setting::count()){
            Setting::first()->update($request->validated());

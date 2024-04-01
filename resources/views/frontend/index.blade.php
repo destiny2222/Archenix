@@ -34,7 +34,7 @@
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>About</span> us</div>
                         <p>
-                            {{ getUi()->body }}
+                            {{ getUi() ? getUi()->body : '' }}
                         </p>
                     </div>
                 </div>

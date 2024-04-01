@@ -59,7 +59,7 @@
                     <div class="col-md-4 mb-30">
                         <div class="sub-title border-footer-light">Contact Us</div>
                         <p>
-                            {{ getAbout()->body }}
+                            {{ getAbout() ? getAbout()->body : '' }}
                         </p>
                     </div>
                     <div class="col-md-4">

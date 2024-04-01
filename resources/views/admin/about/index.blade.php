@@ -53,6 +53,11 @@
                                          <label class=" form-label mb-4">Image Upload :</label>
                                          <input  type="file" value="{{ optional(getUi())->image ?? '' }}" name="image" class="@error('image') is-invalid @enderror form-control">
                                      </div>
+                                        @if (getUi())
+                                            <div class="pt-5">
+                                                <img src="{{ asset('upload/brand/'.getUi()->image) }}"   alt="">
+                                            </div>
+                                        @endif
                                      @error('image')
                                          <span class="invalid-feedback" role="alert">
                                              <strong>{{ $message }}</strong>

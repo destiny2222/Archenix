@@ -3,11 +3,13 @@
         <div class="d-flex">
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
+            @if($brand = getBrands())
             <a class="logo-horizontal " href="route('admin.home')">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" alt="logo">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1"
                     alt="logo">
             </a>
+            @endif
             <!-- LOGO -->
             
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
@@ -34,13 +36,18 @@
                             <!-- SIDE-MENU -->
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                    <img src="{{ asset('upload/brand/'.getBrands()->image) }}" alt="profile-user"
+                                    @if($brand = getBrands())
+                                       <img src="{{  asset('upload/brand/'.getBrands()->image) }}" alt="profile-user"
                                         class="avatar  profile-user brround cover-image">
+                                        @else
+                                            <img src="{{  asset('/assets/images/users/21.jpg') }}" alt="profile-user"
+                                            class="avatar  profile-user brround cover-image">
+                                        @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
                                         <div class="text-center">
-                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">{{ getBrands()->name }}</h5>
+                                            <h5 class="text-dark mb-0 fs-14 fw-semibold">{{getBrands() ? getBrands()->name : '' }}</h5>
                                             <small class="text-muted">Administrator</small>
                                         </div>
                                     </div>

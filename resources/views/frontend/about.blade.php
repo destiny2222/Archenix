@@ -21,13 +21,15 @@
                 <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
                     <div class="section-title">{{ config('app.name') }}<span>About</span></div>
                     <p>
-                        {{  getUi()->body }}
+                        {{ getUi() ? getUi()->body : ''}}
                     </p>
                 </div>
                 <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                     <div class="wrap">
                         <div class="con"> 
-                            <img src="{{ asset('upload/About/'.getUi()->image) }}" class="img-fluid" alt="">
+                            @if (getUi())
+                             <img src="{{ asset('upload/About/'.getUi()->image) }}" class="img-fluid" alt="">
+                            @endif
                         </div>
                     </div>
                 </div>

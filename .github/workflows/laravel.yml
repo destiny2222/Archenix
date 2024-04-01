@@ -39,6 +39,6 @@ jobs:
         script: |
           whoami
           ls -al
-          cd folder
+          cd archenix.blueheightconsult.com
           composer install --ignore-platform-reqs
           php artisan storage:link

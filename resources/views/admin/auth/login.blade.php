@@ -12,10 +12,10 @@
     <meta name="keywords" content="">
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/brand/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
 
     <!-- TITLE -->
-    <title>Sash – Bootstrap 5 Admin & Dashboard Template</title>
+    <title>{{ getBrands() ? getBrands()->name : '' }} – Admin  Dashboard</title>
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,7 +54,9 @@
                 <!-- CONTAINER OPEN -->
                 <div class="col col-login mx-auto mt-7">
                     <div class="text-center">
-                        <a href=""><img src="/assets/images/brand/logo-white.png" class="header-brand-img" alt=""></a>
+                        @if (getBrands())
+                         <a href=""><img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img" alt=""></a>
+                        @endif
                     </div>
                 </div>
 

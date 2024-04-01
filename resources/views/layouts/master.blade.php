@@ -13,10 +13,10 @@
         content="">
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
 
     <!-- TITLE -->
-    <title></title>
+    <title>{{ getBrands() ? getBrands()->name : '' }}</title>
 
     <!-- BOOTSTRAP CSS -->
     <link id="style" href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">

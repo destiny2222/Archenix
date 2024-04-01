@@ -4,11 +4,11 @@
         <div class="side-header">
             @if($brand = getBrands())
             <a class="header-brand1" href="{{ route('admin.home') }}">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" width="100" height="100" alt="logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" width="65" height="65" alt="logo">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img toggle-logo"
-                    alt="logo" width="100" height="100">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo" width="100" height="100" alt="logo">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1" width="100" height="100"
+                    alt="logo" width="65" height="65">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo" width="65" height="65" alt="logo">
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1" width="65" height="65"
                     alt="logo">
             </a>
             @endif

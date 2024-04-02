@@ -63,6 +63,7 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('setting', [WebController::class, 'Setting'])->name('setting.home');
     Route::post('setting/update', [WebController::class, 'StoreSetting'])->name('setting.update');
 
+    
     // sector
     Route::get('sector', [WebController::class, 'Sector'])->name('sector.home');
     Route::get('sector/create', [WebController::class, 'CreateSector'])->name('sector.create');
@@ -70,6 +71,24 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('sector/{id}/edit', [WebController::class, 'EditSector'])->name('sector.edit');
     Route::put('sector/{id}/update', [WebController::class, 'UpdateSector'])->name('sector.update');
     Route::delete('sector/{id}/delete', [WebController::class, 'DeleteSector'])->name('sector.delete');
+
+    // Category
+    Route::get('category', [WebController::class, 'Category'])->name('category.home');
+    Route::get('category/create', [WebController::class, 'CreateCategory'])->name('category.create');
+    Route::post('category/store', [WebController::class, 'StoreCategory'])->name('category.store');
+    Route::get('category/{id}/edit', [WebController::class, 'EditCategory'])->name('category.edit');
+    Route::put('category/{id}/update', [WebController::class, 'UpdateCategory'])->name('category.update');
+    Route::delete('category/{id}/delete', [WebController::class, 'DeleteCategory'])->name('category.delete');
+
+    // Blog
+    Route::get('blog', [WebController::class, 'Blog'])->name('blog.home');
+    Route::get('blog/create', [WebController::class, 'CreateBlog'])->name('blog.create');
+    Route::post('blog/store', [WebController::class, 'StoreBlog'])->name('blog.store');
+    Route::get('blog/{id}/edit', [WebController::class, 'EditBlog'])->name('blog.edit');
+    Route::put('blog/{id}/update', [WebController::class, 'UpdateBlog'])->name('blog.update');
+    Route::delete('blog/{id}/delete', [WebController::class, 'DeleteBlog'])->name('blog.delete');
+
+
 
 
     // profile update

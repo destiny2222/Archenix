@@ -90,6 +90,63 @@
                 @endforeach
             </div>
         </section>
+
+        <!-- sector -->
+    <section class="process section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 animate-box mb-4" data-animate-effect="fadeInUp">
+                    <h2>Our Sectors:</h2>
+                </div>
+                @foreach ($sector as $sectors)
+                    <div class="col-12 col-md-4  mb-5 valign animate-box" data-animate-effect="fadeInRight">
+                        <div class="sector wrap">
+                            <div class="cont">
+                                <h2>{{ $sectors->title }}</h2>
+                                <p>{{ $sectors->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="blog-home section-padding">
+        <div class="container">
+        <div class="row mb-5">
+                <div class="col-md-4">
+                    <div class="sub-title border-bot-light">Blog</div>
+                </div>
+                <div class="col-md-8">
+                    <div class="section-title"><span>Latest</span> News</div>
+                </div>
+            </div>
+        <div class="row">
+            @foreach ($blog as $blogs)
+                <div class="col-md-4">
+                    <div class="item">
+                        <div class="post-img">
+                            <a href="{{ route('blog.detail', $blogs->slug) }}">
+                                <div class="img"> 
+                                    <img src="{{ asset('upload/blog/'.$blogs->image) }}" alt=""> 
+                                </div>
+                            </a>
+                        </div>
+                        <div class="cont">
+                            <h4><a href="{{ route('blog.detail', $blogs->slug) }}">{{ $blogs->title }}</a></h4>
+                            <div class="info">
+                                <a href="{{ route('blog.detail', $blogs->slug) }}"><span>{{ $blogs->category->title }}</span></a> 
+                                <a href="{{ route('blog.detail', $blogs->slug) }}">{{ $blogs->created_at->format('d M Y') }}</a> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    </section>
         
         <!-- Testiominals -->
         {{-- <section class="testimonials">

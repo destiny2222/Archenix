@@ -8,6 +8,7 @@ use App\Models\Portfolio;
 use App\Models\Sector;
 use App\Models\Service;
 use App\Models\Slider;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -16,13 +17,15 @@ class HomeController extends Controller
 {
     public function index(){
         $slide = Slider::orderBy('id','asc')->get();
-        return view('frontend.index', compact('slide'));
+        $sector = Sector::orderBy('id', 'asc')->get();
+        $blog = Post::orderBy('id', 'asc')->take(3)->get();
+        return view('frontend.index', compact('slide','sector', 'blog'));
     }
 
 
     public function about(){
-        $sector = Sector::orderBy('id', 'asc')->get();
-        return view('frontend.about', compact('sector'));
+       
+        return view('frontend.about');
     }
 
     public function service(){
@@ -35,6 +38,15 @@ class HomeController extends Controller
         return view('frontend.portfolio', compact('portfolio'));
     }
 
+    public function blog(){
+        $blog = Post::orderBy('id', 'asc')->get();
+        return view('frontend.blog', compact('blog'));
+    }
+
+    public function blogDetails(Post $post){
+        $recent = Post::orderBy('id', 'desc')->latest();
+        return view('frontend.blogDetails', compact('recent','post'));
+    }
     public function contact(){
         return view('frontend.contact');
     }

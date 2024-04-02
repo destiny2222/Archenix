@@ -11,14 +11,15 @@
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <title>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;1,300;1,400&amp;family=Oswald:wght@300;400&amp;display=swap">
-    <link rel=stylesheet href="css/bootstrap.min.css">
-    <link rel=stylesheet href="css/animate.css">
-    <link rel=stylesheet href="css/themify-icons.css">
-    <link rel=stylesheet href="css/owl.carousel.min.css">
-    <link rel=stylesheet href="css/owl.theme.default.min.css">
-    <link rel=stylesheet href="modules/magnific-popup/magnific-popup.css">
-    <link rel=stylesheet href="modules/YouTubePopUp/YouTubePopUp.css">
-    <link rel=stylesheet href="css/style.css">
+    <link rel=stylesheet href="/css/bootstrap.min.css">
+    <link rel=stylesheet href="/css/animate.css">
+    <link rel=stylesheet href="/css/themify-icons.css">
+    <link rel=stylesheet href="/css/owl.carousel.min.cs
+    s">
+    <link rel=stylesheet href="/css/owl.theme.default.min.css">
+    <link rel=stylesheet href="/modules/magnific-popup/magnific-popup.css">
+    <link rel=stylesheet href="/modules/YouTubePopUp/YouTubePopUp.css">
+    <link rel=stylesheet href="/css/style.css">
    <script src=" {{ getSetting()->google_analytics ?? '' }}"></script>
    <script>
        {{ getSetting()->analysis_trackingid ?? '' }}
@@ -111,18 +112,18 @@
     </footer>
 </div>
 <!-- jQuery -->
-<script src="js/plugins/jquery-3.6.1.min.js"></script>
-<script src="js/plugins/bootstrap.min.js"></script>
-<script src="js/plugins/modernizr-2.6.2.min.js"></script>
-<script src="js/plugins/jquery.waypoints.min.js"></script>
-<script src="js/plugins/imagesloaded.pkgd.min.js"></script>
-<script src="js/plugins/jquery.isotope.v3.0.2.js"></script>
-<script src="js/plugins/owl.carousel.min.js"></script>
-<script src="js/plugins/scrollIt.min.js"></script>
-<script src="modules/magnific-popup/jquery.magnific-popup.js"></script>
-<script src="modules/masonry/masonry.pkgd.min.js"></script>
-<script src="modules/YouTubePopUp/YouTubePopUp.js"></script>
-<script src="js/script.js"></script>
+<script src="/js/plugins/jquery-3.6.1.min.js"></script>
+<script src="/js/plugins/bootstrap.min.js"></script>
+<script src="/js/plugins/modernizr-2.6.2.min.js"></script>
+<script src="/js/plugins/jquery.waypoints.min.js"></script>
+<script src="/js/plugins/imagesloaded.pkgd.min.js"></script>
+<script src="/js/plugins/jquery.isotope.v3.0.2.js"></script>
+<script src="/js/plugins/owl.carousel.min.js"></script>
+<script src="/js/plugins/scrollIt.min.js"></script>
+<script src="/modules/magnific-popup/jquery.magnific-popup.js"></script>
+<script src="/modules/masonry/masonry.pkgd.min.js"></script>
+<script src="/modules/YouTubePopUp/YouTubePopUp.js"></script>
+<script src="/js/script.js"></script>
 @include('vendor.sweetalert.alert')
 </body>
 </html>

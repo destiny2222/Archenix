@@ -15,8 +15,11 @@ use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Social;
 use App\Models\Welcome;
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class WebController extends Controller
@@ -649,6 +652,153 @@ class WebController extends Controller
             Welcome::create($request->validated());
         }
         return redirect('admin/welcome')->with('success', 'Updated Successfully!');
+    }
+
+
+    // blog category
+
+    public function Category(){
+        $data['title']  = "Blog Category";
+        $data['category'] = Category::orderBy('id', 'asc')->get();
+        return view('admin.category.index', $data);
+    }
+
+    public function CreateCategory(){
+        $data['title']  = "Blog Category";
+        return view('admin.category.create', $data);
+    }
+
+    public function StoreCategory(Request $request){
+        $request->validate([ 
+            'title'=>['nullable', 'string'],
+        ]);
+
+        Category::create([
+            'title'=>$request->title,
+            'slug'=>Str::slug($request->title),
+        ]);
+        return redirect('admin/category')->with('success', 'Created Successfully');
+    }
+
+
+
+    public function EditCategory($id){
+        $data['title'] = 'Blog Category';
+        $data['category'] = Category::find($id);
+        return view('admin.category.edit', $data);
+    }
+
+    public function UpdateCategory(Request $request,$id){
+        $request->validate([
+            'title'=>['nullable', 'string'],
+        ]);
+
+        $category = Category::find($id);
+        $category->update([ 
+            'title'=>$request->input('title'),
+            'slug'=>Str::slug($request->title)
+        ]);
+        return redirect('admin/category')->with('success', 'Updated  Successfully');
+    }
+
+    public function DeleteCategory($id){
+        $category = Category::find($id);
+        if($category->delete()){
+            return redirect('admin/category')->with('success', 'Deleted Successfuly');
+        }else{
+            return back()->with('error', 'Oops something went worry');
+        }
+    }
+
+    // blog
+    public function Blog(){
+        $data['title'] = 'Blog ';
+        $data['blog'] = Post::orderBy('id', 'asc')->get(); 
+        return view('admin.blog.index',$data);
+    }
+
+    public function CreateBlog(){
+        $data['title'] = 'Blog';
+        $data['category'] = Category::orderBy('id', 'asc')->get();
+        return view('admin.blog.create', $data);
+    }
+
+    public function StoreBlog(Request $request){
+        $request->validate([
+            'title'=>['nullable', 'string'],
+            'content'=>['nullable', 'string'],
+            'image'=>['nullable', 'image', 'mimes:png,jpg,jpeg,gif,'], 
+        ]);
+
+        $blog_image = null;
+        if($request->hasFile('image')) {
+            $blog_file = time().'.'.$request->image->extension();
+            $request->image->move(public_path('upload/blog/'),$blog_file);
+            $blog_image = $blog_file;
+        }
+
+        $blog = new Post();
+        $blog->title = $request->title;
+        // $blog->author = $request->author;
+        $blog->slug = Str::slug($request->title);
+        $blog->content = $request->content;
+        $blog->image = $blog_image;
+        $blog->status = $request->status;
+        $blog->category_id = $request->category_id;
+        if( $blog->save()){
+            return redirect('admin/blog')->with('success', 'Blog Created Successfully!');
+        }else{
+            return back()->with('error', 'Problem With Creating Blog');
+        }
+    }
+
+
+    public function EditBlog($id){
+        $data['title'] = 'Edit Blog';
+        $data['blog'] = Post::find($id);
+        $data['category'] = Category::orderBy('id', 'asc')->get();
+        return view('admin.blog.edit', $data);
+    }
+
+    public function UpdateBlog(Request $request, $id){
+        $request->validate([
+            'title'=>['nullable', 'string'],
+            'content'=>['nullable', 'string'],
+            'image'=>['nullable', 'image', 'mimes:png,jpg,jpeg,gif,'], 
+        ]);
+
+        $blog = Post::find($id);
+        if ($request->hasFile('image')) {
+            // Delete old image if it exists
+            if (File::exists(public_path('upload/blog/' . $blog->image))) {
+                    File::delete(public_path('upload/blog/' . $blog->image));
+                }
+                // Upload new image
+                $image = $request->file('image');
+                $extension = $image->getClientOriginalExtension();
+                $blog_image = time() . '.' . $extension;
+                $image->move(public_path('upload/blog'), $blog_image);
+                $blog->image = $blog_image;
+            }
+
+        
+        $blog->update([
+            'title'=>$request->input('title'),
+            'content'=>$request->input('content'),
+            'slug'=>Str::slug($request->title),
+            'status'=>$request->input('status') ? 1 : 0,
+            'category_id'=>$request->input('category_id'),
+        ]);
+        return redirect('admin/blog')->with('success', 'Updated Successfuly');
+    }
+
+    public function DeleteBlog($id){
+        $blog = Post::find($id);
+        if($blog->delete()){
+            return redirect('admin/blog')->with('success', 'Deleted Successfuly');
+        }else{
+            return back()->with('error', 'Oops something went worry');
+        }
     }
 }
 

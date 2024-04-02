@@ -38,26 +38,7 @@
         </div>
     </section>
 
-    <!-- Process -->
-    <section class="process section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 animate-box mb-4" data-animate-effect="fadeInUp">
-                    <h2>Our Sectors:</h2>
-                </div>
-                @foreach ($sector as $sectors)
-                    <div class="col-12 col-md-4 valign animate-box" data-animate-effect="fadeInRight">
-                        <div class="wrap">
-                            <div class="cont">
-                                <h3>{{ $sectors->title }}</h3>
-                                <p>{{ $sectors->description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+    
     <!-- Lets-Talk -->
    @include('partials.lettalk')
 @endsection

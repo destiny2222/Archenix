@@ -100,6 +100,14 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::get('welcome', [WebController::class, 'Welcome'])->name('welcome.home');
     Route::post('welcome/store', [WebController::class, 'StoreWelcome'])->name('welcome.store');
 
+    // metaTag
+    Route::get('metaTag', [WebController::class, 'MetaTag'])->name('metaTag.home');
+    Route::post('metaTag/store', [WebController::class, 'StoreMetaTag'])->name('metaTag.store');
+    Route::get('metaTag/create', [WebController::class, 'CreateMetaTag'])->name('metaTag.create');
+    Route::get('metaTag/{id}/edit', [WebController::class, 'EditMetaTag'])->name('metaTag.edit');
+    Route::put('metaTag/{id}/update', [WebController::class, 'UpdateMetaTag'])->name('metaTag.update');
+    Route::delete('metaTag/{id}/delete', [WebController::class, 'DeleteMetaTag'])->name('metaTag.delete');
+
     Route::get('optimize',function (){
         \Illuminate\Support\Facades\Artisan::call('optimize');
         return 1;

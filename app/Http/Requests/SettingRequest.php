@@ -26,6 +26,8 @@ class SettingRequest extends FormRequest
         return [
             'analysis_trackingid'=>['nullable', 'string'],
             'google_analytics'=>['nullable', 'string'],
+            'metatag_keyword'=>['nullable', 'string'],
+            'metatag_des'=>['nullable', 'string'],
         ];
     }
 }

@@ -55,6 +55,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('admin.welcome.home') }}" class="slide-item">About Brand</a></li>
+                                            <li><a href="{{ route('admin.sector.home') }}" class="slide-item">Sector</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -75,7 +76,7 @@
                                     <div class="tab-pane active" id="side13">
                                         <ul class="sidemenu-list">
                                             <li><a href="{{ route('admin.about.home') }}" class="slide-item">About Us</a></li>
-                                            <li><a href="{{ route('admin.sector.home') }}" class="slide-item">Sector</a></li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -116,6 +117,12 @@
                         <span class="side-menu__label">Review</span>
                     </a>
                 </li> --}}
+                <li class="slide">
+                    <a class="side-menu__item" href="{{ route('admin.metaTag.home') }}">
+                        <i class="side-menu__icon fe fe-layers"></i>
+                        <span class="side-menu__label">metaTag</span>
+                    </a>
+                </li>
                 <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.service.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>

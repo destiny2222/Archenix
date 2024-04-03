@@ -18,9 +18,8 @@
     <!-- Row -->
     <div class="row">
         <div class="col-lg-12">
-            <form action="{{  route('admin.sector.update', $sector->id) }}" method="post" enctype="multipart/form-data">
+            <form action="{{  route('admin.metaTag.store') }}" method="post" enctype="multipart/form-data">
                @csrf
-               @method('PUT')
                 <div class="card">
                     <div class="card-header">
                         <div class="card-title">Add New {{ $title }}</div>
@@ -28,31 +27,21 @@
                     <div class="card-body">
                         <div class="row mb-4">
                             <div class="col-md-12">
-                                <label class=" form-label">Title:</label>
-                                <input type="text" value="{{  $sector->title }}" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="">
+                                <label class=" form-label">MetaTag Name:</label>
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="name">
                             </div>
-                            @error('title')
+                            @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        <!-- Row -->
-                        <div class="row">
-                            <div class="col-md-12 mb-4">
-                                <label class=" form-label mb-4">Description :</label>
-                                <textarea  name="description"  class=" form-control">{{  $sector->description }}</textarea>
-                            </div>
-                        </div>
-                        <!--End Row-->
-    
-                        <!--Row-->
                         <div class="row mb-4">
                             <div class="col-md-12">
-                                <label class=" form-label mb-4">Upload :</label>
-                                <input  type="file" name="image" value="{{ $sector->image }}" class="@error('image') is-invalid @enderror form-control">
+                                <label class=" form-label">Description:</label>
+                                <input type="text" class="form-control @error('content') is-invalid @enderror" name="content">
                             </div>
-                            @error('image')
+                            @error('content')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

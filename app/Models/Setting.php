@@ -11,6 +11,8 @@ class Setting extends Model
 
     protected $fillable = [ 
         'analysis_trackingid',
-        'google_analytics'
+        'google_analytics',
+        'metatag_des',
+        'metatag_keyword'
     ];
 }

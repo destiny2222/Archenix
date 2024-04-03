@@ -46,7 +46,7 @@
                         <!--End Row-->
     
                         <!--Row-->
-                        {{-- <div class="row">
+                        <div class="row">
                             <div class="col-md-12">
                                 <label class=" form-label mb-4">Upload :</label>
                                 <input  type="file" name="image" class="@error('image') is-invalid @enderror form-control">
@@ -56,7 +56,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div> --}}
+                        </div>
                     </div>
                     <div class="card-footer">
                         <!--Row-->

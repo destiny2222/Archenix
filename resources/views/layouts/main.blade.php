@@ -9,7 +9,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="https://archenix.blueheightconsult.com/upload/brand/images/favicon.png">
     <meta property="og:image" content="https://archenix.blueheightconsult.com/upload/brand/images/favicon.png" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
-    
+    <!-- Output Meta Tags -->
+    {{-- @foreach($metaTags as $metaTag)
+        <meta name="{{ $metaTag->name }}" content="{{ $metaTag->content }}">
+    @endforeach --}}
         <title>{{ config('app.name') }}</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;1,300;1,400&amp;family=Oswald:wght@300;400&amp;display=swap">
         <link rel=stylesheet href="/css/bootstrap.min.css">

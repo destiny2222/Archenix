@@ -49,7 +49,7 @@
                     </div>
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Our</span> Portfolio</div>
-                        <p>Architecture viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra nec lacus in the nedana mis erodino. Design nila iman the finise viverra nec a lacus miss viventa in the setlien suscipe no curabit tristue the seneoice misuscipit non sagie the fermen.</p>
+                        {{-- <p>Architecture viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra nec lacus in the nedana mis erodino. Design nila iman the finise viverra nec a lacus miss viventa in the setlien suscipe no curabit tristue the seneoice misuscipit non sagie the fermen.</p> --}}
                     </div>
                 </div>
         
@@ -92,25 +92,33 @@
         </section>
 
         <!-- sector -->
-    <section class="process section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 animate-box mb-4" data-animate-effect="fadeInUp">
-                    <h2>Our Sectors:</h2>
-                </div>
-                @foreach ($sector as $sectors)
-                    <div class="col-12 col-md-4  mb-5 valign animate-box" data-animate-effect="fadeInRight">
-                        <div class="sector wrap">
-                            <div class="cont">
-                                <h2>{{ $sectors->title }}</h2>
-                                <p>{{ $sectors->description }}</p>
+        <!-- Services -->
+        <section class="services section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 animate-box mb-4" data-animate-effect="fadeInUp">
+                        <h2>Our Sectors:</h2>
+                    </div>
+                    @foreach ($sector as $sectors)
+                        <div class="col-md-4 mb-5 animate-box" data-animate-effect="fadeInUp">
+                            <div class="item sector" style="background-image:url({{ asset('upload/sector/'.$sectors->image) }})">
+                                <div class="con ">
+                                    <a href="services-page.html">
+                                        @if ($sectors->id < 10)
+                                            <div class="numb">0{{ $sectors->id }}</div>
+                                        @else
+                                            <div class="numb">{{ $sectors->id }}</div>
+                                        @endif
+                                        <h5>{{ $sectors->title }}</h5>
+                                        <p>{{ $sectors->description }}</p>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Blog -->
     <section class="blog-home section-padding">

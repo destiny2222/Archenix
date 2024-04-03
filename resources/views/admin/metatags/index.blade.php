@@ -6,7 +6,7 @@
         <div>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item btn btn-primary">
-                    <a href="{{  route('admin.sector.create') }}" class="text-white">
+                    <a href="{{  route('admin.metaTag.create') }}" class="text-white">
                         Add New {{ $title }}
                     </a>
                 </li>
@@ -28,27 +28,23 @@
                             <thead>
                                 <tr>
                                     <th>S/N</th>
-                                    <th>Image</th>
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($sector as $sectors)
+                                @foreach ($metaTag as $metaTags)
                                 <tr>
                                     <td>{{  $loop->index + 1 }}</td>
-                                    <td>
-                                        <img src="{{ asset('upload/sector/'.$sectors->image) }}" width="50" height="50" alt="">
-                                    </td>
-                                    <td>{{  $sectors->title }}</td>
-                                    <td>{{  $sectors->description }}</td>
+                                    <td>{{  $metaTags->name }}</td>
+                                    <td>{{  $metaTags->content }}</td>
                                     <td name="bstable-actions">
                                         <div class="btn-list d-flex">
-                                            <a href="{{ route('admin.sector.edit',$sectors->id) }}" class="btn btn-sm btn-primary">
+                                            <a href="{{ route('admin.metaTag.edit',$metaTags->id) }}" class="btn btn-sm btn-primary">
                                                 <span class="fe fe-edit"> </span> Edit
                                             </a>
-                                            <form  action="{{ route('admin.sector.delete',$sectors->id) }}" method="post">
+                                            <form  action="{{ route('admin.metaTag.delete',$metaTags->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
                                                 <button  type="submit"  class="btn  btn-sm btn-danger" onclick="return confirm('Are you sure?');">

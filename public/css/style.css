@@ -3606,7 +3606,10 @@ input[type="checkbox"] {
 .footer {
     padding: 90px 0 0;
     position: relative;
-   border-top: 1px solid rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.03);
+    background-blend-mode:overlay;
+    background-color: rgba(0, 0, 0, .8) !important;
+    background: url('../images/slider/2.jpg');
 }
 .footer .top {}
 .footer .top .item h3 {
@@ -3624,6 +3627,10 @@ input[type="checkbox"] {
 .footer .top .item p {
     margin-bottom: 15px;
     color: #999;
+}
+
+.footer p{
+    color: #f3f3f3;
 }
 .footer .top .item .phone {
     font-family: 'Oswald', sans-serif;
@@ -3691,10 +3698,10 @@ input[type="checkbox"] {
 }
 .footer .bottom p {
     font-size: 13px;
-    color: #999;
+    color: #f3f3f3;
 }
 .footer .bottom p a {
-   color: #999;
+   color: #f3f3f3;
 }
 .footer .bottom p a:hover {
     color: #c5a47e;

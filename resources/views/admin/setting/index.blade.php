@@ -30,6 +30,20 @@
                                  <!-- Row -->
                                  <div class="row">
                                      <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">MetaTag Keyword:</label>
+                                         <textarea  name="metatag_keyword" class=" form-control">{{ $setting->metatag_keyword ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!-- Row -->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">MetaTag Description:</label>
+                                         <textarea  name="metatag_des" class=" form-control">{{ $setting->metatag_des ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!-- Row -->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
                                          <label class=" form-label mb-4">Analysis Tracking ID :</label>
                                          <textarea  name="google_analytics" class=" form-control">{{ $setting->google_analytics ?? '' }}</textarea>
                                      </div>

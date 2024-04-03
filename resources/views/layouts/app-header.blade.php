@@ -4,7 +4,7 @@
             <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
             <!-- sidebar-toggle-->
             @if($brand = getBrands())
-            <a class="logo-horizontal " href="route('admin.home')">
+            <a class="logo-horizontal " href="{{route('admin.home')}}">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" alt="logo">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1"
                     alt="logo">

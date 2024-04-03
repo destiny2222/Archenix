@@ -7,6 +7,7 @@ use App\Http\Requests\SettingRequest;
 use App\Http\Requests\WelcomeRequest;
 use App\Models\About;
 use App\Models\Brand;
+use App\Models\MetaTag;
 use App\Models\Portfolio;
 use App\Models\Review;
 use App\Models\Sector;
@@ -799,6 +800,67 @@ class WebController extends Controller
         }else{
             return back()->with('error', 'Oops something went worry');
         }
+    }
+
+    // meta tag
+    public function MetaTag()
+    {
+        $data['title'] = "Meta Tag";
+        $data['metaTag'] = MetaTag::orderBy('id', 'asc')->get();
+        return view('admin.metatags.index', $data);
+    }
+
+    public function CreateMetaTag()
+    {
+        $data['title'] = "Meta Tag";
+        return view('admin.metatags.create', $data);
+    }
+
+    public function StoreMetaTag(Request $request)
+    {
+        $request->validate([
+            'name' => 'nullable|string',
+            'content' => 'nullable|string',
+        ]);
+
+        $metatag = new MetaTag;
+        $metatag->name = $request->name;
+        $metatag->content = $request->content;
+        if($metatag->save()){
+            return redirect('admin/metaTag')->with('success', 'Meta tag created successfully.');
+        }else{
+            return back()->with('error', 'Something went wrong.');
+        }
+    }
+
+    public function EditMetaTag($id)
+    {
+        $data['title'] = "Meta Tag";
+        $data['metaTag'] = MetaTag::findOrFail($id);
+        return view('admin.metatags.edit', $data);
+    }
+
+    public function UpdateMetaTag(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'nullable|string',
+            'content' => 'nullable|string',
+        ]);
+
+        $metaTag = MetaTag::findOrFail($id);
+        $metaTag->update($request->all());
+        return redirect('admin/metaTag')->with('success', 'Meta tag updated successfully.');
+    }
+
+    public function DeleteMetaTag($id)
+    {
+        $metaTag = MetaTag::findOrFail($id);
+        if($metaTag->delete()){
+            return redirect('admin/metatag')->with('success', 'Meta tag deleted successfully.');
+        }else{
+            return back()->with('error', 'Something went wrong.');
+        }
+
     }
 }
 

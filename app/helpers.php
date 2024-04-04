@@ -2,6 +2,7 @@
 
 use App\Models\About;
 use App\Models\Brand;
+use App\Models\MetaTag;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\Setting;
@@ -56,6 +57,11 @@ function getSocial()
     return Social::first();
 }
 
+
+function metaTags()
+{
+    return MetaTag::all();
+}
 
 
 

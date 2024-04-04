@@ -103,7 +103,7 @@
                         <div class="col-md-4 mb-5 animate-box" data-animate-effect="fadeInUp">
                             <div class="item sector" style="background-image:url({{ asset('upload/sector/'.$sectors->image) }})">
                                 <div class="con ">
-                                    <a href="services-page.html">
+                                    <a href="javascript:void()">
                                         @if ($sectors->id < 10)
                                             <div class="numb">0{{ $sectors->id }}</div>
                                         @else

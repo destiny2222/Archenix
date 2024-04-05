@@ -52,8 +52,7 @@
                         {{-- <p>Architecture viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra nec lacus in the nedana mis erodino. Design nila iman the finise viverra nec a lacus miss viventa in the setlien suscipe no curabit tristue the seneoice misuscipit non sagie the fermen.</p> --}}
                     </div>
                 </div>
-        
-                @foreach (getPortfolio() as $key => $portfolio)
+                @forelse (getPortfolio() as $key => $portfolio)
                     @if ($key % 2 == 0)
                         <div class="row mt-120">
                             <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
@@ -87,7 +86,12 @@
                             </div>
                         </div>
                     @endif
-                @endforeach
+
+                @empty
+
+                <h3 class="text-white">COMING SOON</h3>
+
+                @endforelse
             </div>
         </section>
 

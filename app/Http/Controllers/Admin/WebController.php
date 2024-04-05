@@ -17,6 +17,7 @@ use App\Models\Slider;
 use App\Models\Social;
 use App\Models\Welcome;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -861,6 +862,25 @@ class WebController extends Controller
             return back()->with('error', 'Something went wrong.');
         }
 
+    }
+
+    public function inbox(){
+        $contact = Contact::paginate(20);
+        return view('admin.email-inbox', compact('contact'));
+    }
+
+    public function inboxDetails($id){
+        $contact = Contact::find($id);
+        return view('admin.email-inbox-details', compact('contact'));
+    }
+
+    public function inboxDelete($id){
+        $contact = Contact::find($id);
+        if($contact->save()){
+            return back()->with('success', 'Deleted Successful');
+        }else{
+            return back()->with('error', 'Something went worry');
+        }
     }
 }
 

@@ -3881,3 +3881,9 @@ input[type="checkbox"] {
 .sector{
     box-shadow:0px 10px 40px rgb(0 0 0 / 0.2);
 }
+
+.sector:hover{
+    transform: scale(1.05);
+    box-shadow:0px 10px 40px rgb(0 0 0 / 0.2);
+    transition: all 0.8s ease-in-out;
+}

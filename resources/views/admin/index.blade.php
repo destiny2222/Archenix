@@ -25,12 +25,7 @@
         </div>
     </div>
     <div class="col-12">
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <lord-icon
-            src="https://cdn.lordicon.com/qrkvfooq.json"
-            trigger="hover"
-            style="width:250px;height:250px">
-        </lord-icon>
+        <img src="{{ asset('welcome.gif') }}" alt="" class="img-fluid">
     </div>
 </div>
 <!-- ROW-1 CLOSED -->

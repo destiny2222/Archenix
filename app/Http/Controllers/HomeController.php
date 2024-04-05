@@ -59,18 +59,25 @@ class HomeController extends Controller
             'message'=>['required','string'],
             'phone'=>['required','string'],
         ]);
-
+    
         $sendmail = Contact::create($request->all());
-        $mail = getSocial()->email ?? '';
-        if($sendmail->save()){
-            Mail::to($mail)->send(new SendMail($sendmail));
-            Alert::success('success','Your message has been sent successfully');
-            return back();
-        }else{
-            Alert::error('error','An error has occurred');
+        $recipientEmail = getSocial()->email ?? ''; 
+    
+        if (!empty($recipientEmail)) {
+            if($sendmail->save()){
+                Mail::to($recipientEmail)->send(new SendMail($sendmail)); // Set recipient email address here
+                Alert::success('success','Your message has been sent successfully');
+                return back();
+            } else {
+                Alert::error('error','An error has occurred');
+                return back();
+            }
+        } else {
+            Alert::error('error','Recipient email is missing or invalid');
             return back();
         }
     }
+    
 
 
     public function terms(){

@@ -124,6 +124,10 @@ Route::prefix('admin')->name('admin.')->group(function (){
     Route::put('metaTag/{id}/update', [WebController::class, 'UpdateMetaTag'])->name('metaTag.update');
     Route::delete('metaTag/{id}/delete', [WebController::class, 'DeleteMetaTag'])->name('metaTag.delete');
 
+    // Email
+    Route::get('email/inbox', [WebController::class, 'inbox'])->name('inbox.home');
+    Route::get('email/indox/{id}', [WebController::class, 'inboxDetails'])->name('inbox.details');
+    Route::delete('email/indox/{id}', [WebController::class, 'inboxDelete'])->name('inbox.delete');
     Route::get('optimize',function (){
         \Illuminate\Support\Facades\Artisan::call('optimize');
         return 1;

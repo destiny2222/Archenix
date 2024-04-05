@@ -6,13 +6,18 @@
             @if($brand = getBrands())
             <a class="logo-horizontal " href="{{route('admin.home')}}">
                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" alt="logo">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1"
+                <img src="{{ asset('upload/brand/'.getBrands()->image) }}"  class="header-brand-img light-logo1"
                     alt="logo">
             </a>
             @endif
             <!-- LOGO -->
-            
+           
             <div class="d-flex order-lg-2 ms-auto header-right-icons">
+                <div class="pe-5 d-md-none d-block">
+                    <a href="/">
+                        <i class="fa fa-home" style="font-size: 30px"></i>
+                    </a>
+                </div>
                 <!-- SEARCH -->
                 <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button"
                     data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4"
@@ -20,6 +25,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fe fe-more-vertical"></span>
                 </button>
+                
                 <div class="navbar navbar-collapse responsive-navbar p-0">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
                         <div class="d-flex order-lg-2">
@@ -30,8 +36,6 @@
                                 </a>
                             </div>
                             <!-- Theme-Layout -->
-                            
-                            
                             
                             <!-- SIDE-MENU -->
                             <div class="dropdown d-flex profile-1">
@@ -64,6 +68,11 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </div>
+                            <div>
+                                <a href="/">
+                                    <i class="fa fa-home" style="font-size: 30px"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

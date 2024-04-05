@@ -28,6 +28,7 @@ class SettingRequest extends FormRequest
             'google_analytics'=>['nullable', 'string'],
             'metatag_keyword'=>['nullable', 'string'],
             'metatag_des'=>['nullable', 'string'],
+            'terms_conditions'=>['nullable', 'string'],
         ];
     }
 }

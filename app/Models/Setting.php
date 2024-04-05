@@ -13,6 +13,7 @@ class Setting extends Model
         'analysis_trackingid',
         'google_analytics',
         'metatag_des',
-        'metatag_keyword'
+        'metatag_keyword',
+        'terms_conditions'
     ];
 }

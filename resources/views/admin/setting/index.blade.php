@@ -55,6 +55,13 @@
                                      </div>
                                  </div>
                                  <!--End Row-->
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Terms & Conditions:</label>
+                                         <textarea  name="terms_conditions" id="body" cols="30" rows="10" class=" form-control">{{ $setting->terms_conditions ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <!--End Row-->
                              </div>
                              <div class="card-footer">
                                  <!--Row-->

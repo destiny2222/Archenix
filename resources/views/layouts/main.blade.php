@@ -107,8 +107,9 @@
                         <p>© <script>document.write(new Date().getFullYear())</script> {{ config('app.name') }}. All right reserved.</p>
                     </div>
                     <div class="col-md-8">
-                        <p class="right"><a href="#">Terms &amp; Conditions</a> | Terms of Use | Sitemap</p>
+                        <p class="right"><a href="/terms">Terms &amp; Conditions</a></p>
                     </div>
+                    
                 </div>
             </div>
         </div>

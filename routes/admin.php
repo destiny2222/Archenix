@@ -2,12 +2,28 @@
 
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\WebController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
+// Show password reset form
 
+Route::get('admin/password/reset', [PasswordResetController::class, 'showPasswordResetForm'])->name('password.reset');
+
+// Send password reset email
+Route::post('admin/password/email', [PasswordResetController::class, 'sendResetLinkEmail'])->name('password.email');
+
+// Show password reset form with token
+Route::get('admin/reset-password/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset.token.custom');
+// Route::get('admin/reset-password/{token}/{email}', [PasswordResetController::class, 'showResetForm'])->name('password.reset.token.custom');
+
+// Handle password reset form submission
+Route::post('admin/password/reset', [PasswordResetController::class, 'reset'])->name('password.update.custom');
 
 Route::prefix('admin')->name('admin.')->group(function (){
+
     Route::controller(LoginController::class)->group(function (){
         Route::get('login-form','showLoginForm')->name('login-Form');
         Route::post('login','login')->name('login');

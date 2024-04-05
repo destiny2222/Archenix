@@ -105,24 +105,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="slide">
-                    <a class="side-menu__item" href="{{ route('admin.brand.home') }}">
-                        <i class="side-menu__icon fe fe-layers"></i>
-                        <span class="side-menu__label">Brand</span>
-                    </a>
-                </li>
                 {{-- <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.review.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>
                         <span class="side-menu__label">Review</span>
                     </a>
                 </li> --}}
-                <li class="slide">
-                    <a class="side-menu__item" href="{{ route('admin.metaTag.home') }}">
-                        <i class="side-menu__icon fe fe-layers"></i>
-                        <span class="side-menu__label">metaTag</span>
-                    </a>
-                </li>
                 <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.service.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>
@@ -135,12 +123,27 @@
                         <span class="side-menu__label">Portfolio</span>
                     </a>
                 </li>
-                
                 <li class="slide">
-                    <a class="side-menu__item" href="{{ route('admin.setting.home') }}">
-                        <i class="side-menu__icon fe fe-layers"></i>
-                        <span class="side-menu__label">Setting</span>
+                    <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                        class="side-menu__icon fe fe-folder"></i><span
+                            class="side-menu__label">SEO Setting</span><i
+                            class="angle fe fe-chevron-right"></i>
                     </a>
+                    <ul class="slide-menu">
+                        <li class="panel sidetab-menu">
+                            <div class="panel-body tabs-menu-body p-0 border-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="side13">
+                                        <ul class="sidemenu-list">
+                                            <li><a href="{{ route('admin.brand.home') }}" class="slide-item">Brand</a></li>
+                                            <li><a href="{{ route('admin.setting.home') }}" class="slide-item">Setting</a></li>
+                                            <li><a href="{{ route('admin.metaTag.home') }}" class="slide-item">MetaTag</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
                 <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.social.home') }}">

@@ -28,10 +28,10 @@
         <section class="about section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    {{-- <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
                         <div class="sub-title border-bot-light">Who are we?</div>
-                    </div>
-                    <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
+                    </div> --}}
+                    <div class="col-md-12 animate-box text-center" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Welcome to </span> {{ getWelcome() ? getWelcome()->title : '' }}</div>
                         <p>
                             {{ getWelcome() ? getWelcome()->description : '' }}
@@ -44,9 +44,9 @@
         <section class="projects3 section-padding">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
+                    {{-- <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                         <div class="sub-title border-bot-light">Discover</div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Our</span> Portfolio</div>
                         {{-- <p>Architecture viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra nec lacus in the nedana mis erodino. Design nila iman the finise viverra nec a lacus miss viventa in the setlien suscipe no curabit tristue the seneoice misuscipit non sagie the fermen.</p> --}}

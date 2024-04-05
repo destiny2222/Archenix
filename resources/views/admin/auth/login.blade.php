@@ -32,6 +32,16 @@
     <!-- INTERNAL Switcher css -->
     <link href="/assets/switcher/css/switcher.css" rel="stylesheet">
     <link href="/assets/switcher/demo.css" rel="stylesheet">
+    <style>
+        .login-width{
+            width: 50%;
+        }
+        @media screen and (max-width: 768px){
+            .login-width{
+                width: auto;
+            }
+        }
+    </style>
 
 </head>
 
@@ -61,10 +71,15 @@
                 </div>
 
                 <div class="container-login100">
-                    <div class="wrap-login100 p-6">
+                    <div class="wrap-login100 p-6 login-width" >
                             <span class="login100-form-title pb-5">
                                 Login
                             </span>
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <div class="panel panel-primary">
                                 <div class="panel-body tabs-menu-body p-0 pt-5">
                                     <div class="tab-content">
@@ -75,16 +90,26 @@
                                                     <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                         <i class="zmdi zmdi-email text-muted" aria-hidden="true"></i>
                                                     </a>
-                                                    <input class="input100 border-start-0 form-control ms-0" name="field" type="email" placeholder="Email">
+                                                    <input class="input100 border-start-0 form-control @error('field') is-invalid @enderror ms-0" name="field" type="email" placeholder="Email">
+                                                    @error('field')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="wrap-input100 validate-input input-group" id="Password-toggle">
                                                     <a href="javascript:void(0)" class="input-group-text bg-white text-muted">
                                                         <i class="zmdi zmdi-eye text-muted" aria-hidden="true"></i>
                                                     </a>
-                                                    <input class="input100 border-start-0 form-control ms-0" name="password" type="password" placeholder="Password">
+                                                    <input class="input100 border-start-0 form-control @error('password') is-invalid @enderror ms-0" name="password" type="password" placeholder="Password">
+                                                    @error('password')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                    @enderror
                                                 </div>
                                                 <div class="text-end pt-4">
-                                                    <p class="mb-0"><a href="#" class="text-primary ms-1">Forgot Password?</a></p>
+                                                    <p class="mb-0"><a href="password/reset" class="text-primary ms-1">Forgot Password?</a></p>
                                                 </div>
                                                 <div class="container-login100-form-btn">
                                                     <button type="submit" style="border: 0;" class="login100-form-btn btn-primary">
@@ -133,7 +158,7 @@
 
     <!-- Switcher js -->
     <script src="/assets/switcher/js/switcher.js"></script>
-
+    @include('partials.message')
 </body>
 
 </html>

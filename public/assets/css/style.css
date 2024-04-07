@@ -51686,7 +51686,9 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
     display: flex;
     z-index: 9999 !important;
     border-block-end: 1px solid #e9edf4;
-    background: #ffffff;
+    background: #806617;
+    /* background: #BB9C41; */
+    /* background: #242424; */
     transition: padding-inline-start 0.3s ease;
 }
 
@@ -51754,7 +51756,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
     inset-inline-start: 0;
     color: #282f53;
     z-index: 99;
-    background: #fff;
+    background: #242424;
     -webkit-box-shadow: 0 8px 24px rgba(168, 180, 208, 0.1);
     box-shadow: 0 8px 24px rgba(168, 180, 208, 0.1);
     -webkit-transition: left 450ms ease, width 450ms ease;
@@ -51807,7 +51809,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
     -webkit-transition: border-inline-start-color 0.3s ease, background-color 0.3s ease;
     -o-transition: border-inline-start-color 0.3s ease, background-color 0.3s ease;
     transition: border-inline-start-color 0.3s ease, background-color 0.3s ease;
-    color: #282f53;
+    color: #f3f3f3;
     margin: 2px 0px;
     white-space: nowrap;
 }
@@ -52160,6 +52162,7 @@ body.transparent-mode *:hover::-webkit-scrollbar-thumb {
     -o-transition: left 0.3s ease, width 450ms ease;
     transition: left 0.3s ease, width 450ms ease;
     height: 75px;
+    background-color: #242424;
 }
 
 .side-header .header-brand-img.toggle-logo,

@@ -13,9 +13,10 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use Spatie\Analytics\AnalyticsFacade as Analytics ;
+// use Spatie\Analytics\Analytics;
+use Illuminate\Support\Collection;
 use Spatie\Analytics\Period as Period;
-// use Spatie\Analytics\Facades\Analytics;
-
+// use Analytics;
 
 
 class HomeController extends Controller
@@ -28,19 +29,16 @@ class HomeController extends Controller
 
     public function home(){
 
+
+
         $admin = Auth::guard('admin')->user();
-        // $viewID = env('ANALYTICS_VIEW_ID');
-        $analyticsData = Analytics::fetchMostVisitedPages(Period::days(7));
-        dd($analyticsData);
+        // $analytics = Analytics::fetchVisitorsAndPageViews(Period::days(7));  
+        //     dd($analytics);
         return view('admin.index', [
             'admin' => $admin,
         ]);
     }
 
-    public function fetchVisitorsAndPageViewsByDate(Period $period)
-    {
-        return view('admin.chart', compact('period'));
-    }
 
     public function profile()
     {

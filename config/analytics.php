@@ -5,15 +5,26 @@ return [
     /*
      * The view id of which you want to display data.
      */
-    'property_id' => env('ANALYTICS_PROPERTY_ID'),
+    'view_id' => env('ANALYTICS_VIEW_ID'),
 
     /*
      * Path to the client secret json file. Take a look at the README of this package
      * to learn how to get this file. You can also pass the credentials as an array
      * instead of a file path.
      */
-    'service_account_credentials_json' => storage_path('app/service-account-credentials.json'),
-    // 'service_account_credentials_json' => 'analytics/service-account-credentials.json',
+    'service_account_credentials_json' => [
+        "type" => getenv('ANALYTICS_CREDENTIALS_TYPE'),
+        "project_id" => getenv('ANALYTICS_CREDENTIALS_PROJECT_ID'),
+        "private_key_id" => getenv('ANALYTICS_CREDENTIALS_PRIVATE_KEY_ID'),
+        "private_key" => getenv('ANALYTICS_CREDENTIALS_PRIVATE_KEY'),
+        "client_email" => getenv('ANALYTICS_CREDENTIALS_CLIENT_EMAIL'),
+        "client_id" => getenv('ANALYTICS_CREDENTIALS_CLIENT_ID'),
+        "auth_uri" => getenv('ANALYTICS_CREDENTIALS_AUTH_URI'),
+        "token_uri" => getenv('ANALYTICS_CREDENTIALS_TOKEN_URI'),
+        "auth_provider_x509_cert_url" => getenv('ANALYTICS_CREDENTIALS_AUTH_PROVIDER_X509_CERT_URL'),
+        "client_x509_cert_url" => getenv('ANALYTICS_CREDENTIALS_CLIENT_X509_CERT_URL'),
+        "universe_domain" => getenv('universe_domain')
+    ],   
 
     /*
      * The amount of minutes the Google API responses will be cached.

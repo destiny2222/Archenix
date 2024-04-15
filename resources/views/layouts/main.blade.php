@@ -64,9 +64,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-30">
-                        <div class="sub-title border-footer-light">{{ config('app.name') }}</div>
+                        <div class="sub-title border-footer-light">Location</div>
                         <p>
-                            {{ getWelcome() ? getWelcome()->description : '' }}
+                            {{  getSocial()->address ?? '' }}
                         </p>
                     </div>
                     <div class="col-md-4">

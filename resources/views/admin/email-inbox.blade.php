@@ -31,8 +31,8 @@
                                             </td>
                                             <td class="view-message dont-show fw-semibold clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->name }}</td>
                                             <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->email }}</td>
-                                            <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->subject }}</td>
-                                            <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->phone }}</td>
+                                            {{-- <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->subject }}</td>
+                                            <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->phone }}</td> --}}
                                             <td class="view-message clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->message }}</td>
                                             <td class="view-message text-end fw-semibold clickable-row" data-href='{{ route('admin.inbox.details',$item->id) }}'>{{ $item->created_at->format('d M Y')}}</td>
                                             

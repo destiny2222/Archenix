@@ -25,12 +25,10 @@
             <div class="slider__progress"><span></span></div>
         </header>
         <!-- About -->
-        <section class="about section-padding">
+
+        {{-- <section class="about section-padding">
             <div class="container">
                 <div class="row">
-                    {{-- <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
-                        <div class="sub-title border-bot-light">Who are we?</div>
-                    </div> --}}
                     <div class="col-md-12 animate-box text-center" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Welcome to </span> {{ getWelcome() ? getWelcome()->title : '' }}</div>
                         <p>
@@ -39,15 +37,41 @@
                     </div>
                 </div>
             </div>
+        </section> --}}
+
+        <!-- About -->
+        <section id="aboutus" class="about section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-12 animate-box text-center mb-5" data-animate-effect="fadeInUp">
+                        <div class="section-title">{{ getUi() ? getUi()->title : '' }}</div>
+                        <p>
+                            {!! html_entity_decode(getUi() ? getUi()->body : '')  !!}
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 animate-box mb-4" data-animate-effect="fadeInUp">
+                        <h2>Vision</h2>
+                        <p>{{ getUi() ? getUi()->vision : '' }}</p>
+                    </div>
+                    <div class="col-12 col-md-6 animate-box mb-4" data-animate-effect="fadeInUp">
+                        <h2>Mission</h2>
+                        <p>{{ getUi() ? getUi()->mission : '' }}</p>
+                    </div>
+                    
+                    
+                </div>
+            </div>
         </section>
+
+
         <!-- Projects 2 -->
-        <section class="projects3 section-padding">
+        <section  id="portfolio"  class="projects3 section-padding">
             <div class="container">
                 <div class="row mb-5">
                     {{-- <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">
                         <div class="sub-title border-bot-light">Discover</div>
                     </div> --}}
-                    <div class="col-md-8 animate-box" data-animate-effect="fadeInUp">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Our</span> Portfolio</div>
                         {{-- <p>Architecture viverra tristique justo duis vitae diaminte neque nivamus aestan ateuene artines ariianu the ateliten finibus viverra nec lacus in the nedana mis erodino. Design nila iman the finise viverra nec a lacus miss viventa in the setlien suscipe no curabit tristue the seneoice misuscipit non sagie the fermen.</p> --}}
                     </div>
@@ -95,17 +119,43 @@
             </div>
         </section>
 
+        <!-- Services -->
+        <section id="service" class="services section-padding">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <div class="section-title"><span>Our</span> Service</div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach ($service as $services)
+                    <div class="col-md-4 mb-5 animate-box" data-animate-effect="fadeInUp">
+                        <div class="item" style="background-image:url({{ asset('upload/service/'.$services->image) }})">
+                            <div class="con">
+                                <h5>{{ $services->title }}</h5>
+                                <p>{{ $services->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
         <!-- sector -->
         <!-- Services -->
-        <section class="services section-padding">
+        <section id="sector" class="services section-padding">
             <div class="container">
-                <div class="row">
-                    <div class="col-12 animate-box mb-4" data-animate-effect="fadeInUp">
-                        <h2>Our Sectors:</h2>
+                <div class="row mb-5">
+                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                        <div class="section-title"><span>Our</span> Sectors</div>
                     </div>
+                </div>
+                <div class="row">
                     @foreach ($sector as $sectors)
                         <div class="col-md-4 mb-5 animate-box" data-animate-effect="fadeInUp">
-                            <div class="item sector" style="background-image:url({{ asset('upload/sector/'.$sectors->image) }})">
+                            {{-- <div class="item sector" style="background-image:url({{ asset('upload/sector/'.$sectors->image) }})"> --}}
+                            <div class="item sector">
                                 <div class="con ">
                                     <a href="javascript:void()">
                                         @if ($sectors->id < 10)
@@ -125,7 +175,7 @@
         </section>
 
     <!-- Blog -->
-    <section class="blog-home section-padding">
+    {{-- <section class="blog-home section-padding">
         <div class="container">
         <div class="row mb-5">
                 <div class="col-md-4">
@@ -158,7 +208,7 @@
             @endforeach
         </div>
     </div>
-    </section>
+    </section> --}}
         
         <!-- Testiominals -->
         {{-- <section class="testimonials">

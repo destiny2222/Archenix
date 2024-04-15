@@ -54,7 +54,7 @@
                                                     <li><a class="sub-slide-item" href="{{ route('admin.slide.create') }}">Create Slider</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{{ route('admin.welcome.home') }}" class="slide-item">About Brand</a></li>
+                                            {{-- <li><a href="{{ route('admin.welcome.home') }}" class="slide-item">About Brand</a></li> --}}
                                             <li><a href="{{ route('admin.sector.home') }}" class="slide-item">Sector</a></li>
                                         </ul>
                                     </div>
@@ -84,7 +84,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="slide">
+                {{-- <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
                         class="side-menu__icon fe fe-folder"></i><span
                             class="side-menu__label">Post Section</span><i
@@ -104,7 +104,7 @@
                             </div>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.review.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>

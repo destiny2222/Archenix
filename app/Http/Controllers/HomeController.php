@@ -16,10 +16,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 class HomeController extends Controller
 {
     public function index(){
-        $slide = Slider::orderBy('id','asc')->get();
+        $slide = Slider::orderBy('id','asc')->take(1)->get();
         $sector = Sector::orderBy('id', 'asc')->get();
         $blog = Post::orderBy('id', 'asc')->take(3)->get();
-        return view('frontend.index', compact('slide','sector', 'blog'));
+        $service = Service::orderBy('id', 'asc')->get();
+        return view('frontend.index', compact('slide','sector', 'blog', 'service'));
     }
 
 
@@ -53,11 +54,11 @@ class HomeController extends Controller
 
     public function StoreContact(Request $request){
         $request->validate([
-            'name' => ['required','string'],
-            'email' => ['required','string'],
-            'subject' => ['required','string'],
-            'message'=>['required','string'],
-            'phone'=>['required','string'],
+            'name' => ['nullable','string'],
+            'email' => ['nullable','string'],
+            'subject' => ['nullable','string'],
+            'message'=>['nullable','string'],
+            'phone'=>['nullable','string'],
         ]);
     
         $sendmail = Contact::create($request->all());

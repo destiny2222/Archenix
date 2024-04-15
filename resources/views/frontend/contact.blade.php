@@ -43,12 +43,12 @@
                             <div class="col-md-12 form-group">
                                 <input name="email" type="email" placeholder="Enter Your Email *" required>
                             </div>
-                            <div class="col-md-12 form-group">
+                            {{-- <div class="col-md-12 form-group">
                                 <input name="phone" type="text" placeholder="Enter Your Number *" required>
                             </div>
                             <div class="col-md-12 form-group">
                                 <input name="subject" type="text" placeholder="Subject *" required>
-                            </div>
+                            </div> --}}
                             <div class="col-md-12 form-group">
                                 <textarea name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
                             </div>

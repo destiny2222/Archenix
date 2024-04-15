@@ -5,7 +5,7 @@
         <header id="slider-area" class="header slider-fade">
             <div class="owl-carousel owl-theme">
                 <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-                @foreach ($slide as $slides)
+                @foreach ($slide as $slsitides)
                     <div class="text-left item bg-img" data-overlay-dark="4" data-background="{{ asset('upload/slider/'.$slides->image) }}">
                         <div class="v-middle caption">
                             <div class="container">
@@ -112,9 +112,6 @@
                     @endif
 
                 @empty
-
-                <h3 class="text-white">COMING SOON</h3>
-
                 @endforelse
             </div>
         </section>

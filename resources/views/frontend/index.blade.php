@@ -21,8 +21,8 @@
                     </div>
                 @endforeach
             </div>
-            <div class="slide-num" id="snh-1"></div>
-            <div class="slider__progress"><span></span></div>
+            {{-- <div class="slide-num" id="snh-1"></div>
+            <div class="slider__progress"><span></span></div> --}}
         </header>
         <!-- About -->
 

@@ -111,12 +111,12 @@
                         <span class="side-menu__label">Review</span>
                     </a>
                 </li> --}}
-                <li class="slide">
+                {{-- <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.service.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>
                         <span class="side-menu__label">Services</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="slide">
                     <a class="side-menu__item" href="{{ route('admin.portfolio.home') }}">
                         <i class="side-menu__icon fe fe-layers"></i>

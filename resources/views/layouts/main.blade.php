@@ -68,6 +68,12 @@
                         <p>
                             {{  getSocial()->address ?? '' }}
                         </p>
+                        <p>
+                            {{  getSocial()->address_2 ?? '' }}
+                        </p>
+                        <p>
+                            {{  getSocial()->address_3 ?? '' }}
+                        </p>
                     </div>
                     <div class="col-md-4">
                         <div class="item">

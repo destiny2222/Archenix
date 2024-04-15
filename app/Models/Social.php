@@ -17,5 +17,7 @@ class Social extends Model
         'email',
         'phone',
         'address',
+        'address_2',
+        'address_3'
     ];
 }

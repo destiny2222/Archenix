@@ -105,6 +105,18 @@
                                          <textarea  name="address"  class=" form-control">{{ $social->address ?? '' }}</textarea>
                                      </div>
                                  </div>
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Address 2(optional):</label>
+                                         <textarea  name="address_2"  class=" form-control">{{ $social->address_2 ?? '' }}</textarea>
+                                     </div>
+                                 </div>
+                                 <div class="row">
+                                     <div class="col-md-12 mb-4">
+                                         <label class=" form-label mb-4">Address 3(optional):</label>
+                                         <textarea  name="address_3"  class=" form-control">{{ $social->address_3 ?? '' }}</textarea>
+                                     </div>
+                                 </div>
                                  <!--End Row-->
                              </div>
                              <div class="card-footer">

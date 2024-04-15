@@ -120,7 +120,7 @@
         </section>
 
         <!-- Services -->
-        <section id="service" class="services section-padding">
+        {{-- <section id="service" class="services section-padding">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
@@ -140,17 +140,17 @@
                     @endforeach
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <!-- sector -->
         <!-- Services -->
         <section id="sector" class="services section-padding">
             <div class="container">
-                <div class="row mb-5">
+                {{-- <div class="row mb-5">
                     <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
                         <div class="section-title"><span>Our</span> Sectors</div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="row">
                     @foreach ($sector as $sectors)
                         <div class="col-md-4 mb-5 animate-box" data-animate-effect="fadeInUp">

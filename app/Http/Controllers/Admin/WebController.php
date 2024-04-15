@@ -221,6 +221,8 @@ class WebController extends Controller
             $social->linkedin = $request->input('linkedin');
             $social->email = $request->input('email');
             $social->address = $request->input('address');
+            $social->address_2 = $request->input('address_2');
+            $social->address_3 = $request->input('address_3');
             $social->phone = $request->input('phone');
             $sav = $social->save();
             if ($sav) {
@@ -236,6 +238,8 @@ class WebController extends Controller
             $social->linkedin = $request->linkedin;
             $social->email = $request->email;
             $social->address = $request->address;
+            $social->address_2 = $request->address_2;
+            $social->address_3 = $request->address_3;
             $social->phone = $request->phone;
             $sav = $social->save();
             if ($sav) {

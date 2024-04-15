@@ -111,6 +111,7 @@
                                          <textarea  name="address_2"  class=" form-control">{{ $social->address_2 ?? '' }}</textarea>
                                      </div>
                                  </div>
+                                 
                                  <div class="row">
                                      <div class="col-md-12 mb-4">
                                          <label class=" form-label mb-4">Address 3(optional):</label>

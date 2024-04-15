@@ -45,17 +45,23 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 animate-box text-lg-center mb-5" data-animate-effect="fadeInUp">
                         {{-- <div class="section-title">{{ getUi() ? getUi()->title : '' }}</div> --}}
-                        <p>
-                            {!! html_entity_decode(getUi() ? getUi()->body : '')  !!}
-                        </p>
+                        <div class="card bg-dark p-3">
+                            <p>
+                                {!! html_entity_decode(getUi() ? getUi()->body : '')  !!}
+                            </p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 animate-box mb-4" data-animate-effect="fadeInUp">
-                        <h2>Vision</h2>
-                        <p>{{ getUi() ? getUi()->vision : '' }}</p>
+                        <div class="card bg-dark p-3">
+                            <h2>Vision</h2>
+                            <p>{{ getUi() ? getUi()->vision : '' }}</p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 animate-box mb-4" data-animate-effect="fadeInUp">
-                        <h2>Mission</h2>
-                        <p>{{ getUi() ? getUi()->mission : '' }}</p>
+                        <div class="card bg-dark p-3">
+                            <h2>Mission</h2>
+                            <p>{{ getUi() ? getUi()->mission : '' }}</p>
+                        </div>
                     </div>
                     
                     

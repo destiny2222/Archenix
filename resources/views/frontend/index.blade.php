@@ -43,7 +43,7 @@
         <section id="aboutus" class="about section-padding">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-12 animate-box text-center mb-5" data-animate-effect="fadeInUp">
+                    <div class="col-12 col-md-10 animate-box text-center mb-5" data-animate-effect="fadeInUp">
                         <div class="section-title">{{ getUi() ? getUi()->title : '' }}</div>
                         <p>
                             {!! html_entity_decode(getUi() ? getUi()->body : '')  !!}

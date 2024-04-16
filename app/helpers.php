@@ -23,8 +23,7 @@ function getAbout()
 
 function getPortfolio()
 {
-    $portfolio = Portfolio::orderBy('id', 'asc')->take(3)->get();
-    return $portfolio;
+    return Portfolio::first();
 }
 
 

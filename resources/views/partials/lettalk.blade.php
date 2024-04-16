@@ -22,11 +22,11 @@
                             {{-- <div class="col-md-6 form-group">
                                 <input class="line-gray" name="subject" type="text" placeholder="Subject *" required="">
                             </div> --}}
-                            <div class="col-md-12 form-group">
+                            <div class="col-md-12 mb-4 form-group">
                                 <textarea class="line-gray" name="message" id="message" cols="30" rows="4" placeholder="Message *" required></textarea>
                             </div>
-                            <div class="col-md-12">
-                                <input class="line-gray w-100" name="submit" type="submit" value="Send">
+                            <div class="col-md-12 text-center">
+                                <input class="line-gray w-50" name="submit" type="submit" value="Send">
                             </div>
                         </div>
                     </form>

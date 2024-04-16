@@ -93,8 +93,8 @@
                         <div class="item">
                             <h3>Get in <span>Touch</span></h3>
                             <p>{{  getSocial()->address ?? '' }}</p>
-                            <p>{{  getSocial()->address_2 ?? '' }}</p>
-                            <p>{{  getSocial()->address_3 ?? '' }}</p>
+                            {{-- <p>{{  getSocial()->address_2 ?? '' }}</p>
+                            <p>{{  getSocial()->address_3 ?? '' }}</p> --}}
                             <p class="phone">{{  getSocial()->phone ?? '' }}</p>
                             <p class="mail">{{  getSocial()->email ?? '' }}</p>
                             <div class="social mt-2"> 

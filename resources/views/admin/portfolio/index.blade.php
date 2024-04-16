@@ -5,11 +5,15 @@
         <h1 class="page-title">{{ $title }}</h1>
         <div>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item btn btn-primary">
-                    <a href="{{  route('admin.portfolio.create') }}" class="text-white">
-                        Add New {{ $title }}
-                    </a>
-                </li>
+                @if (count($portfolio) > 0)
+                <!-- Handle the case where the count is less than zero -->
+                @else
+                    <li class="breadcrumb-item btn btn-primary">
+                        <a href="{{ route('admin.portfolio.create') }}" class="text-white">
+                            Add New {{ $title }}
+                        </a>
+                    </li>
+                @endif
             </ol>
         </div>
     </div>
@@ -27,9 +31,9 @@
                         <table class="table table-bordered border text-nowrap mb-0" id="basic-edit">
                             <thead>
                                 <tr>
-                                    <th>S/N</th>
+                                    {{-- <th>S/N</th>
                                     <th>Image</th>
-                                    <th>Title</th>
+                                    <th>Title</th> --}}
                                     <th>Description</th>
                                     <th>Action</th>
                                 </tr>
@@ -37,11 +41,11 @@
                             <tbody>
                                 @foreach ($portfolio as $portfolios)
                                 <tr>
-                                    <td>{{  $loop->index + 1 }}</td>
+                                    {{-- <td>{{  $loop->index + 1 }}</td>
                                     <td>
                                         <img src="{{ asset('upload/portfolio/'.$portfolios->image) }}" width="50" height="50" alt="">
                                     </td>
-                                    <td>{{  $portfolios->title }}</td>
+                                    <td>{{  $portfolios->title }}</td> --}}
                                     <td>{{  $portfolios->description }}</td>
                                     <td name="bstable-actions">
                                         <div class="btn-list d-flex">

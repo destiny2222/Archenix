@@ -21,11 +21,11 @@
             <form action="{{  route('admin.portfolio.store') }}" method="post" enctype="multipart/form-data">
                @csrf
                 <div class="card">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <div class="card-title">Add New {{ $title }}</div>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
-                        <div class="row mb-4">
+                        {{-- <div class="row mb-4">
                             <div class="col-md-12">
                                 <label class=" form-label">Portfolio Title:</label>
                                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="title">
@@ -35,7 +35,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <!-- Row -->
                         <div class="row">
                             <div class="col-md-12 mb-4">
@@ -46,7 +46,7 @@
                         <!--End Row-->
     
                         <!--Row-->
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col-md-12">
                                 <label class=" form-label mb-4">Upload :</label>
                                 <input  type="file" name="image" class="@error('image') is-invalid @enderror form-control">
@@ -56,7 +56,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <!--End Row-->
                     </div>
                     <div class="card-footer">

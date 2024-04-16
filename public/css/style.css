@@ -764,18 +764,40 @@ input[type="checkbox"] {
     width: 70px;
 }
 .logo-img {
-    width: 70px !important;
+    width:30% !important;
 }
 
 @media (max-width:768px){
     .logo-img {
         width: 60px !important;
+        visibility: hidden;
     }
 }
 
 .nav-scroll .logo-img {
     margin-bottom: 0px;
 }
+.logo-wrapper{
+    position: relative;
+}
+
+.mobile-logo{
+    position: absolute;
+    top: -30%;
+    left: -48px;
+    width: 281%;
+    display: none;
+}
+.nav-scroll .mobile-logo{
+    top:-43px;
+}
+
+@media (max-width:768px){
+    .mobile-logo {
+        display: block;
+    }
+}
+
 .nav-scroll .logo-wrapper .logo h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 27px;
@@ -1090,6 +1112,15 @@ input[type="checkbox"] {
     animation-delay: .6s;
     margin-right: 15px;
 }
+
+
+@media (max-width:768px) {
+    .header .caption p{
+        font-size: 17px;
+    }
+}
+
+
 .header .caption p span {
     letter-spacing: 5px;
     text-transform: uppercase;

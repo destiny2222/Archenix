@@ -4,10 +4,10 @@
         <div class="logo-wrapper">
             <a class="logo" href="/">
                 @if (getBrands())
-                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img normal-logo" alt="Logo">
-                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img scrolled-logo" alt="Logo"> 
-                @endif
-                
+                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img normal-logo " alt="Logo">
+                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="logo-img scrolled-logo " alt="Logo"> 
+                 <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="mobile-logo"  alt="">
+                 @endif
             </a>
             <!-- <a class="logo" href="/"> <h2>ArchSan <span>Architecture</span></h2> </a> -->
         </div>

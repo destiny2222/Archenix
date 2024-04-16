@@ -10,7 +10,7 @@
                         <div class="v-middle caption">
                             <div class="container">
                                 <div class="row">
-                                    <div class="col-md-7">
+                                    <div class="col-md-7 pt-lg-0 pt-5">
                                         <h1>{{ $slides->title }}</h1>
                                         <p>{{ $slides->description }}</p> 
                                         {{-- <a href="{{ $slides->link }}" class="button-light">Learn more</a>  --}}

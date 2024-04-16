@@ -98,9 +98,9 @@
                             <p class="phone">{{  getSocial()->phone ?? '' }}</p>
                             <p class="mail">{{  getSocial()->email ?? '' }}</p>
                             <div class="social mt-2"> 
-                                {{-- <a href="{{  getSocial()->facebook ?? '' }}"><i class="ti-facebook"></i></a> 
+                                <a href="{{  getSocial()->facebook ?? '' }}"><i class="ti-facebook"></i></a> 
                                 <a href="{{  getSocial()->twitter ?? '' }}"><i class="ti-twitter"></i></a> 
-                                <a href="{{  getSocial()->instagram ?? '' }}"><i class="ti-instagram"></i></a>  --}}
+                                <a href="{{  getSocial()->instagram ?? '' }}"><i class="ti-instagram"></i></a> 
                                 <a href="{{  getSocial()->linkedin ?? '' }}"><i class="ti-linkedin"></i></a> 
                             </div>
                         </div>

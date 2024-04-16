@@ -82,7 +82,7 @@
                                 <ul class="p-0">
                                     <li><a href="#slider-area">Home</a></li>
                                     <li><a href="#aboutus">About</a></li>
-                                    <li><a href="#service">Service</a></li>
+                                    {{-- <li><a href="#service">Service</a></li> --}}
                                     <li><a href="#portfolio">Portfolio</a></li>
                                     <li><a href="#contact">Contact</a></li>
                                 </ul>
@@ -92,15 +92,15 @@
                     <div class="col-md-4">
                         <div class="item">
                             <h3>Get in <span>Touch</span></h3>
-                            <p>{{  getSocial()->address ?? '' }}</p>
+                            {{-- <p>{{  getSocial()->address ?? '' }}</p> --}}
                             {{-- <p>{{  getSocial()->address_2 ?? '' }}</p>
                             <p>{{  getSocial()->address_3 ?? '' }}</p> --}}
                             <p class="phone">{{  getSocial()->phone ?? '' }}</p>
                             <p class="mail">{{  getSocial()->email ?? '' }}</p>
                             <div class="social mt-2"> 
-                                <a href="{{  getSocial()->facebook ?? '' }}"><i class="ti-facebook"></i></a> 
+                                {{-- <a href="{{  getSocial()->facebook ?? '' }}"><i class="ti-facebook"></i></a> 
                                 <a href="{{  getSocial()->twitter ?? '' }}"><i class="ti-twitter"></i></a> 
-                                <a href="{{  getSocial()->instagram ?? '' }}"><i class="ti-instagram"></i></a> 
+                                <a href="{{  getSocial()->instagram ?? '' }}"><i class="ti-instagram"></i></a>  --}}
                                 <a href="{{  getSocial()->linkedin ?? '' }}"><i class="ti-linkedin"></i></a> 
                             </div>
                         </div>

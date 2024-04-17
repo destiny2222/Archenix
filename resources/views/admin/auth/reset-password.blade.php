@@ -53,11 +53,9 @@
 
                 <!-- CONTAINER OPEN -->
                 <div class="col col-login mx-auto mt-7">
-                    {{-- <div class="text-center">
-                        @if (getBrands())
-                         <a href=""><img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img" alt=""></a>
-                        @endif
-                    </div> --}}
+                    <div class="text-center">
+                        <a href=""><img src="{{ asset('d-logo.png') }}" class="header-brand-img" alt=""></a>
+                    </div>
                 </div>
 
                 <div class="container-login100">

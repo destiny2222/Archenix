@@ -2,16 +2,14 @@
     <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
     <div class="app-sidebar">
         <div class="side-header">
-            @if($brand = getBrands())
             <a class="header-brand1" href="{{ route('admin.home') }}">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img desktop-logo" width="65" height="65" alt="logo">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img toggle-logo"
+                <img src="{{ asset('d-logo.png') }}" class="header-brand-img desktop-logo" width="65" height="65" alt="logo">
+                <img src="{{ asset('d-logo.png') }}" class="header-brand-img toggle-logo"
                     alt="logo" width="65" height="65">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo" width="65" height="65" alt="logo">
-                <img src="{{ asset('upload/brand/'.getBrands()->image) }}" class="header-brand-img light-logo1" width="65" height="65"
+                <img src="{{ asset('d-logo.png') }}" class="header-brand-img light-logo" width="65" height="65" alt="logo">
+                <img src="{{ asset('d-logo.png') }}" class="header-brand-img light-logo1" width="65" height="65"
                     alt="logo">
             </a>
-            @endif
             <!-- LOGO -->
         </div>
         <div class="main-sidemenu">

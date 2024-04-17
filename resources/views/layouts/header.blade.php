@@ -30,3 +30,22 @@
         </div>
     </div>
 </nav> 
+
+<script>
+    // Get all the nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Loop through each nav link
+    navLinks.forEach(link => {
+        // Add click event listener
+        link.addEventListener('click', function() {
+            // Remove the "active" class from all nav links
+            navLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            // Add the "active" class to the clicked nav link
+            this.classList.add('active');
+        });
+    });
+</script>

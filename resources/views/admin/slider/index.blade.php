@@ -44,7 +44,7 @@
                                     </td>
                                     <td>{{  $slides->title }}</td>
                                     {{-- <td>{{  $slides->link }}</td> --}}
-                                    <td>{{  $slides->description }}</td>
+                                    <td>{!! html_entity_decode($slides->description) !!}</td>
                                     <td name="bstable-actions">
                                         <div class="btn-list d-flex">
                                             <a href="{{ route('admin.slide.edit',$slides->id) }}" class="btn btn-sm btn-primary">

@@ -3927,3 +3927,7 @@ input[type="checkbox"] {
     line-height: 2.5rem;
     font-size: 3.125rem; */
 }
+
+.pt-7{
+    padding-top: 10rem !important;
+}

@@ -51,7 +51,7 @@
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label class=" form-label mb-4">Slide Description :</label>
-                                <textarea  name="description" class=" form-control @error('description') is-invalid @enderror"></textarea>
+                                <textarea  name="description" id="body" class=" form-control @error('description') is-invalid @enderror"></textarea>
                             </div>
                         </div>
                         @error('description')

@@ -52,7 +52,7 @@
                         <div class="row">
                             <div class="col-md-12 mb-4">
                                 <label class=" form-label mb-4">Slide Description :</label>
-                                <textarea  name="description"  class=" form-control">{{ $slide->description }}</textarea>
+                                <textarea  name="description" id="body"  class=" form-control">{{ $slide->description }}</textarea>
                             </div>
                         </div>
                         <!--End Row-->
